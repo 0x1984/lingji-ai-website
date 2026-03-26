@@ -59,7 +59,7 @@ export function FAQ() {
         </div>
 
         <div className="mx-auto max-w-3xl">
-          <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
+          <Accordion className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}

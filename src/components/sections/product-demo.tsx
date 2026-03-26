@@ -221,7 +221,7 @@ export function ProductDemo() {
                           </span>
                         </div>
                         <div className="space-y-2 text-sm font-medium text-red-800 dark:text-red-200">
-                          {demos[2].result.risks.map((risk, i) => (
+                          {demos[2].result?.risks?.map((risk, i) => (
                             <div key={i} className="flex items-start gap-2">
                               <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0 1 1 0 002 0zm-1 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
