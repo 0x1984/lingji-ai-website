@@ -15,7 +15,7 @@ export function HeroSection() {
       <FadeIn>
         <div className="mx-auto max-w-4xl text-center">
         <Badge className="mb-6 text-base px-4 py-2" variant="secondary">
-          🚀 企业尽调，10倍提升效率
+          企业尽调，10倍提升效率
         </Badge>
         <h1 className="mb-8 text-5xl font-bold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl dark:text-zinc-50">
           在Claude Code中<br />
@@ -244,7 +244,7 @@ export function HeroSection() {
         <div className="mx-auto mt-16 max-w-2xl text-center">
         <div className="rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50 p-10 shadow-xl dark:border-blue-800 dark:from-blue-950 dark:to-cyan-950">
           <h2 className="mb-4 text-3xl font-bold text-zinc-950 dark:text-zinc-50">
-            🎯 免费开始，无需信用卡
+            免费开始，无需信用卡
           </h2>
           <p className="mb-8 text-lg text-zinc-600 dark:text-zinc-400">
             立即获取API Key，在Claude Code中使用
