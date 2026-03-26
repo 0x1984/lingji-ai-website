@@ -15,13 +15,13 @@ export function Header() {
           </Link>
           <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 sm:flex dark:text-zinc-400">
             <Link
-              href="#features"
+              href="/#features"
               className="transition-colors hover:text-zinc-950 dark:hover:text-zinc-50"
             >
               产品
             </Link>
             <Link
-              href="#pricing"
+              href="/pricing"
               className="transition-colors hover:text-zinc-950 dark:hover:text-zinc-50"
             >
               定价
@@ -36,7 +36,7 @@ export function Header() {
         </div>
         <div className="flex items-center gap-3">
           <Link
-            href="#register"
+            href="/register"
             className="inline-flex h-9 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 bg-blue-600 px-3 text-xs font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 sm:bg-gradient-to-r sm:px-4 sm:text-sm sm:hover:from-blue-700 sm:hover:to-cyan-700"
           >
             <span className="sm:hidden">API Key</span>

@@ -1,0 +1,311 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Check, Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/ui/fade-in";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+const useCases = [
+  "供应商风险评估",
+  "投资尽调",
+  "背景调查",
+  "竞品分析",
+  "法律纠纷查询",
+  "其他",
+];
+
+export default function RegisterPage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    useCases: [] as string[],
+  });
+  const [apiKey, setApiKey] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    // 模拟 API 调用
+    setTimeout(() => {
+      // 生成模拟 API Key
+      const mockApiKey = `lingji_${Math.random().toString(36).substring(2, 15)}_${Math.random().toString(36).substring(2, 15)}`;
+      setApiKey(mockApiKey);
+      setSuccess(true);
+      setLoading(false);
+    }, 1500);
+  };
+
+  const toggleUseCase = (useCase: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      useCases: prev.useCases.includes(useCase)
+        ? prev.useCases.filter((uc) => uc !== useCase)
+        : [...prev.useCases, useCase],
+    }));
+  };
+
+  if (success) {
+    return (
+      <main className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 py-24 dark:from-blue-950 dark:to-cyan-950">
+        <div className="container max-w-screen-2xl">
+          <FadeIn>
+            <div className="mx-auto max-w-2xl">
+              <Card className="border-2 shadow-2xl dark:border-zinc-800">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
+                    <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
+                  </div>
+                  <CardTitle className="text-3xl">注册成功！</CardTitle>
+                  <CardDescription className="text-base">
+                    您的 API Key 已生成
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="rounded-xl bg-zinc-100 p-6 dark:bg-zinc-800">
+                    <p className="mb-3 text-sm font-semibold text-zinc-600 dark:text-zinc-400">
+                      您的 API Key：
+                    </p>
+                    <code className="block break-all rounded-lg bg-white p-4 text-sm dark:bg-zinc-900">
+                      {apiKey}
+                    </code>
+                    <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-500">
+                      请妥善保管您的 API Key，不要分享给他人
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border-2 border-blue-200 bg-blue-50 p-6 dark:border-blue-800 dark:bg-blue-950">
+                    <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">
+                      下一步：配置到 Claude Code
+                    </h3>
+                    <ol className="space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
+                      <li className="flex gap-3">
+                        <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          1
+                        </span>
+                        <span>打开 Claude Code，按 Cmd/Ctrl + Shift + P</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          2
+                        </span>
+                        <span>搜索 "MCP" 并选择 "Configure MCP Servers"</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          3
+                        </span>
+                        <span>
+                          添加灵吉AI MCP Server：
+                          <pre className="mt-2 overflow-x-auto rounded-lg bg-white p-3 text-xs dark:bg-zinc-900">
+{`{
+  "mcpServers": {
+    "lingji-ai": {
+      "command": "python",
+      "args": ["-m", "lingji_ai_mcp"],
+      "env": {
+        "LINGJI_AI_API_KEY": "${apiKey}"
+      }
+    }
+  }
+}`}
+                          </pre>
+                        </span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          4
+                        </span>
+                        <span>重启 Claude Code，开始使用！</span>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <Button
+                      size="lg"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700"
+                      onClick={() => router.push("/docs")}
+                    >
+                      查看完整文档
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="flex-1"
+                      onClick={() => window.open("https://github.com/0x1984/lingji-ai-plugins", "_blank")}
+                    >
+                      GitHub 仓库
+                    </Button>
+                  </div>
+
+                  <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+                    配置说明已发送到您的邮箱，请查收
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </FadeIn>
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 py-24 dark:from-blue-950 dark:to-cyan-950">
+      <div className="container max-w-screen-2xl">
+        <FadeIn>
+          <div className="mx-auto max-w-2xl">
+            <Card className="border-2 shadow-2xl dark:border-zinc-800">
+              <CardHeader className="text-center">
+                <CardTitle className="text-3xl">获取免费 API Key</CardTitle>
+                <CardDescription className="text-base">
+                  立即开始使用，每天10次免费查询
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* 姓名 */}
+                  <div>
+                    <label htmlFor="name" className="mb-2 block text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                      姓名 <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      className="w-full rounded-xl border-2 border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                      placeholder="张三"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
+                  </div>
+
+                  {/* 邮箱 */}
+                  <div>
+                    <label htmlFor="email" className="mb-2 block text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                      邮箱 <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      className="w-full rounded-xl border-2 border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                      placeholder="you@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
+                  </div>
+
+                  {/* 公司（可选） */}
+                  <div>
+                    <label htmlFor="company" className="mb-2 block text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                      公司 <span className="text-zinc-500">(可选)</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      className="w-full rounded-xl border-2 border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                      placeholder="XX科技有限公司"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    />
+                  </div>
+
+                  {/* 使用场景 */}
+                  <div>
+                    <label className="mb-3 block text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                      使用场景 <span className="text-zinc-500">(可多选)</span>
+                    </label>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {useCases.map((useCase) => (
+                        <label
+                          key={useCase}
+                          className={`flex cursor-pointer items-center gap-3 rounded-xl border-2 p-3 transition-colors ${
+                            formData.useCases.includes(useCase)
+                              ? "border-blue-600 bg-blue-50 dark:bg-blue-950"
+                              : "border-zinc-300 bg-white hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900"
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            className="h-4 w-4 rounded border-zinc-300 text-blue-600 focus:ring-blue-600 dark:border-zinc-700"
+                            checked={formData.useCases.includes(useCase)}
+                            onChange={() => toggleUseCase(useCase)}
+                          />
+                          <span className="text-sm text-zinc-700 dark:text-zinc-300">
+                            {useCase}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 提交按钮 */}
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={loading}
+                    className="w-full bg-blue-600 text-lg hover:bg-blue-700"
+                  >
+                    {loading ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        注册中...
+                      </>
+                    ) : (
+                      "注册并获取 API Key"
+                    )}
+                  </Button>
+
+                  {/* 说明文字 */}
+                  <div className="space-y-2 text-center text-sm text-zinc-600 dark:text-zinc-400">
+                    <div className="flex items-center justify-center gap-2">
+                      <Check className="h-4 w-4 text-green-600" />
+                      <span>无需信用卡</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                      <Check className="h-4 w-4 text-green-600" />
+                      <span>立即开通</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-2">
+                      <Check className="h-4 w-4 text-green-600" />
+                      <span>可以随时取消</span>
+                    </div>
+                  </div>
+
+                  <p className="text-center text-xs text-zinc-500 dark:text-zinc-500">
+                    注册即表示您同意我们的{" "}
+                    <Link href="/terms" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">
+                      服务条款
+                    </Link>{" "}
+                    和{" "}
+                    <Link href="/privacy" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">
+                      隐私政策
+                    </Link>
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
+
+            <div className="mt-8 text-center">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                已有账户？{" "}
+                <Link href="/login" className="text-blue-600 hover:underline dark:text-blue-400">
+                  登录
+                </Link>
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </main>
+  );
+}
