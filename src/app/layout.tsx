@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "灵吉AI - 企业数据，AI原生",
-  description: "在Claude Code中自动生成企业尽调报告，10倍提升效率",
+  title: "灵吉AI - 开源企业数据 Commands + MCP Server",
+  description: "开源的 Claude Code/OpenClaw Commands，免费使用。获取 API Key 解锁企业数据查询、股权穿透、风险评估等深度功能。",
 };
 
 export default function RootLayout({
