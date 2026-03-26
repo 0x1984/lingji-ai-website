@@ -57,26 +57,26 @@ export default function RegisterPage() {
     return (
       <div className="flex flex-col font-sans">
         <Header />
-        <main className="flex-1 bg-gradient-to-br from-blue-50 to-cyan-50 py-24 dark:from-blue-950 dark:to-cyan-950">
+        <main className="flex-1 bg-zinc-50 py-24 dark:bg-zinc-950">
           <div className="container max-w-screen-2xl">
             <FadeIn>
               <div className="mx-auto max-w-2xl">
-                <Card className="border-2 shadow-2xl dark:border-zinc-800">
+                <Card className="border shadow-card dark:border-zinc-800">
                   <CardHeader className="text-center">
                     <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900">
                       <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
                     </div>
-                    <CardTitle className="text-3xl">注册成功！</CardTitle>
+                    <CardTitle className="text-3xl font-semibold">注册成功！</CardTitle>
                     <CardDescription className="text-base">
                       您的 API Key 已生成
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className="rounded-xl bg-zinc-100 p-6 dark:bg-zinc-800">
-                      <p className="mb-3 text-sm font-semibold text-zinc-600 dark:text-zinc-400">
+                    <div className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+                      <p className="mb-3 text-sm font-medium text-zinc-600 dark:text-zinc-400">
                         您的 API Key：
                       </p>
-                      <code className="block break-all rounded-lg bg-white p-4 text-sm dark:bg-zinc-900">
+                      <code className="block break-all rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-950">
                         {apiKey}
                       </code>
                       <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-500">
@@ -84,30 +84,30 @@ export default function RegisterPage() {
                       </p>
                     </div>
 
-                    <div className="rounded-xl border-2 border-blue-200 bg-blue-50 p-6 dark:border-blue-800 dark:bg-blue-950">
+                    <div className="rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
                       <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">
                         下一步：配置到 Claude Code
                       </h3>
                       <ol className="space-y-3 text-sm text-zinc-700 dark:text-zinc-300">
                         <li className="flex gap-3">
-                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-zinc-900 text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-900">
                             1
                           </span>
                           <span>打开 Claude Code，按 Cmd/Ctrl + Shift + P</span>
                         </li>
                         <li className="flex gap-3">
-                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-zinc-900 text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-900">
                             2
                           </span>
                           <span>搜索 "MCP" 并选择 "Configure MCP Servers"</span>
                         </li>
                         <li className="flex gap-3">
-                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-zinc-900 text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-900">
                             3
                           </span>
                           <span>
                             添加灵吉AI MCP Server：
-                            <pre className="mt-2 overflow-x-auto rounded-lg bg-white p-3 text-xs dark:bg-zinc-900">
+                            <pre className="mt-2 overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-xs dark:border-zinc-800 dark:bg-zinc-950">
 {`{
   "mcpServers": {
     "lingji-ai": {
@@ -123,7 +123,7 @@ export default function RegisterPage() {
                           </span>
                         </li>
                         <li className="flex gap-3">
-                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-zinc-900 text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-900">
                             4
                           </span>
                           <span>重启 Claude Code，开始使用！</span>
@@ -134,7 +134,7 @@ export default function RegisterPage() {
                     <div className="flex gap-4">
                       <Button
                         size="lg"
-                        className="flex-1 bg-blue-600 hover:bg-blue-700"
+                        className="h-12 flex-1 bg-zinc-900 font-medium hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
                         onClick={() => router.push("/docs")}
                       >
                         查看完整文档
@@ -142,7 +142,7 @@ export default function RegisterPage() {
                       <Button
                         size="lg"
                         variant="outline"
-                        className="flex-1"
+                        className="h-12 flex-1 border-zinc-300 font-medium hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-800"
                         onClick={() => window.open("https://github.com/0x1984/lingji-ai-plugins", "_blank")}
                       >
                         GitHub 仓库
@@ -172,13 +172,13 @@ export default function RegisterPage() {
   return (
     <div className="flex flex-col font-sans">
       <Header />
-      <main className="flex-1 bg-gradient-to-br from-blue-50 to-cyan-50 py-24 dark:from-blue-950 dark:to-cyan-950">
+      <main className="flex-1 bg-zinc-50 py-24 dark:bg-zinc-950">
         <div className="container max-w-screen-2xl">
           <FadeIn>
             <div className="mx-auto max-w-2xl">
-              <Card className="border-2 shadow-2xl dark:border-zinc-800">
+              <Card className="border shadow-card dark:border-zinc-800">
                 <CardHeader className="text-center">
-                  <CardTitle className="text-3xl">获取免费 API Key</CardTitle>
+                  <CardTitle className="text-3xl font-semibold">获取免费 API Key</CardTitle>
                   <CardDescription className="text-base">
                     立即开始使用，每天10次免费查询
                   </CardDescription>
@@ -187,14 +187,14 @@ export default function RegisterPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* 姓名 */}
                     <div>
-                      <label htmlFor="name" className="mb-2 block text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                      <label htmlFor="name" className="mb-2 block text-sm font-medium text-zinc-950 dark:text-zinc-50">
                         姓名 <span className="text-red-600">*</span>
                       </label>
                       <input
                         type="text"
                         id="name"
                         required
-                        className="w-full rounded-xl border-2 border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                        className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:focus:border-zinc-100 dark:focus:ring-zinc-100"
                         placeholder="张三"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -203,14 +203,14 @@ export default function RegisterPage() {
 
                     {/* 邮箱 */}
                     <div>
-                      <label htmlFor="email" className="mb-2 block text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                      <label htmlFor="email" className="mb-2 block text-sm font-medium text-zinc-950 dark:text-zinc-50">
                         邮箱 <span className="text-red-600">*</span>
                       </label>
                       <input
                         type="email"
                         id="email"
                         required
-                        className="w-full rounded-xl border-2 border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                        className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:focus:border-zinc-100 dark:focus:ring-zinc-100"
                         placeholder="you@example.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -219,13 +219,13 @@ export default function RegisterPage() {
 
                     {/* 公司（可选） */}
                     <div>
-                      <label htmlFor="company" className="mb-2 block text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                      <label htmlFor="company" className="mb-2 block text-sm font-medium text-zinc-950 dark:text-zinc-50">
                         公司 <span className="text-zinc-500">(可选)</span>
                       </label>
                       <input
                         type="text"
                         id="company"
-                        className="w-full rounded-xl border-2 border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+                        className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-3 text-zinc-950 focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:focus:border-zinc-100 dark:focus:ring-zinc-100"
                         placeholder="XX科技有限公司"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -234,22 +234,22 @@ export default function RegisterPage() {
 
                     {/* 使用场景 */}
                     <div>
-                      <label className="mb-3 block text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                      <label className="mb-3 block text-sm font-medium text-zinc-950 dark:text-zinc-50">
                         使用场景 <span className="text-zinc-500">(可多选)</span>
                       </label>
                       <div className="grid gap-3 sm:grid-cols-2">
                         {useCases.map((useCase) => (
                           <label
                             key={useCase}
-                            className={`flex cursor-pointer items-center gap-3 rounded-xl border-2 p-3 transition-colors ${
+                            className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-colors ${
                               formData.useCases.includes(useCase)
-                                ? "border-blue-600 bg-blue-50 dark:bg-blue-950"
+                                ? "border-zinc-900 bg-zinc-100 dark:border-zinc-100 dark:bg-zinc-800"
                                 : "border-zinc-300 bg-white hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900"
                             }`}
                           >
                             <input
                               type="checkbox"
-                              className="h-4 w-4 rounded border-zinc-300 text-blue-600 focus:ring-blue-600 dark:border-zinc-700"
+                              className="h-4 w-4 rounded border-zinc-300 text-zinc-900 focus:ring-zinc-900 dark:border-zinc-700 dark:text-zinc-100"
                               checked={formData.useCases.includes(useCase)}
                               onChange={() => toggleUseCase(useCase)}
                             />
@@ -266,7 +266,7 @@ export default function RegisterPage() {
                       type="submit"
                       size="lg"
                       disabled={loading}
-                      className="w-full bg-blue-600 text-lg hover:bg-blue-700"
+                      className="h-12 w-full bg-zinc-900 text-base font-medium hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
                     >
                       {loading ? (
                         <>

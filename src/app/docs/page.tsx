@@ -126,10 +126,10 @@ export default function DocsPage() {
       <Header />
       <main className="flex-1">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-cyan-50 py-24 dark:from-blue-950 dark:to-cyan-950">
+      <section className="bg-zinc-50 py-32 dark:bg-zinc-950">
         <div className="container max-w-screen-2xl">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-zinc-50">
+            <h1 className="mb-6 text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl dark:text-zinc-50">
               快速开始使用灵吉AI
             </h1>
             <p className="text-xl text-zinc-600 dark:text-zinc-400">
@@ -146,10 +146,10 @@ export default function DocsPage() {
             <FadeIn key={section.title} delay={sectionIndex * 100}>
               <div className="mb-16">
                 <div className="mb-8 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600">
-                    <section.icon className="h-6 w-6 text-white" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
+                    <section.icon className="h-6 w-6 text-zinc-900 dark:text-zinc-100" />
                   </div>
-                  <h2 className="text-3xl font-bold text-zinc-950 dark:text-zinc-50">
+                  <h2 className="text-3xl font-semibold text-zinc-950 dark:text-zinc-50">
                     {section.title}
                   </h2>
                 </div>
@@ -160,17 +160,17 @@ export default function DocsPage() {
                     {section.steps.map((step, stepIndex) => (
                       <Card
                         key={stepIndex}
-                        className="border-2 dark:border-zinc-800"
+                        className="border shadow-card dark:border-zinc-800"
                       >
                         <CardHeader>
-                          <CardTitle className="text-xl">{step.title}</CardTitle>
+                          <CardTitle className="text-xl font-semibold">{step.title}</CardTitle>
                           <CardDescription className="text-base">
                             {step.description}
                           </CardDescription>
                         </CardHeader>
                         {step.code && (
                           <CardContent>
-                            <pre className="overflow-x-auto rounded-lg bg-zinc-100 p-4 text-sm dark:bg-zinc-900">
+                            <pre className="overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-950">
                               <code>{step.code}</code>
                             </pre>
                           </CardContent>
@@ -178,7 +178,7 @@ export default function DocsPage() {
                         {step.action && (
                           <CardContent>
                             <Link href={step.actionHref}>
-                              <Button className="bg-blue-600 hover:bg-blue-700">
+                              <Button className="h-10 bg-zinc-900 font-medium hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">
                                 {step.action}
                                 <ChevronRight className="ml-2 h-4 w-4" />
                               </Button>
@@ -196,10 +196,10 @@ export default function DocsPage() {
                     {section.commands.map((command, commandIndex) => (
                       <Card
                         key={commandIndex}
-                        className="border-2 dark:border-zinc-800"
+                        className="border shadow-card hover:shadow-card-hover transition-shadow duration-200 dark:border-zinc-800"
                       >
                         <CardHeader>
-                          <CardTitle className="text-xl font-mono text-blue-600 dark:text-blue-400">
+                          <CardTitle className="text-xl font-mono font-semibold text-zinc-900 dark:text-zinc-100">
                             {command.name}
                           </CardTitle>
                           <CardDescription className="text-base">
@@ -208,15 +208,15 @@ export default function DocsPage() {
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div>
-                            <p className="mb-2 text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                            <p className="mb-2 text-sm font-medium text-zinc-950 dark:text-zinc-50">
                               示例：
                             </p>
-                            <pre className="overflow-x-auto rounded-lg bg-zinc-100 p-3 text-xs dark:bg-zinc-900">
+                            <pre className="overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-xs dark:border-zinc-800 dark:bg-zinc-950">
                               <code>{command.example}</code>
                             </pre>
                           </div>
                           <div>
-                            <p className="mb-2 text-sm font-semibold text-zinc-950 dark:text-zinc-50">
+                            <p className="mb-2 text-sm font-medium text-zinc-950 dark:text-zinc-50">
                               返回内容：
                             </p>
                             <ul className="space-y-1">
@@ -225,7 +225,7 @@ export default function DocsPage() {
                                   key={detailIndex}
                                   className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400"
                                 >
-                                  <Check className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                                  <Check className="h-4 w-4 text-zinc-900 dark:text-zinc-100" />
                                   {detail}
                                 </li>
                               ))}
@@ -243,10 +243,10 @@ export default function DocsPage() {
                     {section.topics.map((topic, topicIndex) => (
                       <Card
                         key={topicIndex}
-                        className="border-2 dark:border-zinc-800"
+                        className="border shadow-card dark:border-zinc-800"
                       >
                         <CardHeader>
-                          <CardTitle className="text-xl">{topic.title}</CardTitle>
+                          <CardTitle className="text-xl font-semibold">{topic.title}</CardTitle>
                           <CardDescription className="text-base">
                             {topic.description}
                           </CardDescription>
@@ -259,7 +259,7 @@ export default function DocsPage() {
                                   key={stepIndex}
                                   className="flex gap-3 text-sm text-zinc-700 dark:text-zinc-300"
                                 >
-                                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-zinc-900 text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-900">
                                     {stepIndex + 1}
                                   </span>
                                   {step}
@@ -268,7 +268,7 @@ export default function DocsPage() {
                             </ol>
                           )}
                           {topic.code && (
-                            <pre className="overflow-x-auto rounded-lg bg-zinc-100 p-4 text-sm dark:bg-zinc-900">
+                            <pre className="overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-950">
                               <code>{topic.code}</code>
                             </pre>
                           )}
@@ -277,9 +277,9 @@ export default function DocsPage() {
                               {topic.issues.map((issue, issueIndex) => (
                                 <div
                                   key={issueIndex}
-                                  className="rounded-lg bg-zinc-50 p-4 dark:bg-zinc-900"
+                                  className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900"
                                 >
-                                  <p className="mb-2 text-sm font-semibold text-red-600 dark:text-red-400">
+                                  <p className="mb-2 text-sm font-medium text-red-600 dark:text-red-400">
                                     问题：{issue.problem}
                                   </p>
                                   <p className="text-sm text-zinc-700 dark:text-zinc-300">
@@ -304,14 +304,14 @@ export default function DocsPage() {
       <section className="bg-zinc-50 py-24 dark:bg-zinc-950">
         <div className="container max-w-screen-2xl">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-zinc-950 dark:text-zinc-50">
+            <h2 className="mb-6 text-3xl font-semibold text-zinc-950 dark:text-zinc-50">
               还没有 API Key？
             </h2>
             <p className="mb-8 text-xl text-zinc-600 dark:text-zinc-400">
               免费获取，立即开始使用
             </p>
             <Link href="/register">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button size="lg" className="h-12 bg-zinc-900 font-medium hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">
                 获取免费 API Key
               </Button>
             </Link>

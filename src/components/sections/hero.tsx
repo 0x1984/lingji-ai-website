@@ -11,39 +11,35 @@ export function HeroSection() {
   const [activeTab, setActiveTab] = useState("sme");
 
   return (
-    <section className="container max-w-screen-2xl py-24 sm:py-32">
+    <section className="container max-w-screen-2xl py-32 sm:py-40">
       <FadeIn>
         <div className="mx-auto max-w-4xl text-center">
-        <Badge className="mb-6 text-base px-4 py-2" variant="secondary">
+        <Badge className="mb-8 text-sm px-4 py-1.5 border-zinc-300 bg-zinc-50 text-zinc-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
           企业尽调，10倍提升效率
         </Badge>
-        <h1 className="mb-8 text-5xl font-bold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl dark:text-zinc-50">
+        <h1 className="mb-6 text-5xl font-extrabold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl dark:text-zinc-50 leading-[1.1]">
           在Claude Code中<br />
           <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
             2分钟完成深度尽调
           </span>
         </h1>
-        <p className="mb-10 max-w-2xl text-xl text-zinc-600 dark:text-zinc-400 sm:text-lg">
-          AI驱动的企业数据查询平台
-          <br />
-          <span className="text-zinc-500 dark:text-zinc-500">
-            9个Commands • 股权穿透 • 关联关系 • 风险评估
-          </span>
+        <p className="mb-12 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400 sm:text-xl leading-relaxed">
+          AI驱动的企业数据查询平台。9个Commands，股权穿透，关联关系，风险评估。
         </p>
 
         {/* 数据指标带 */}
-        <div className="mb-12 grid grid-cols-3 gap-6 rounded-2xl bg-gradient-to-r from-blue-50 to-cyan-50 p-8 dark:from-blue-950 dark:to-cyan-950 sm:gap-8 sm:p-10">
+        <div className="mb-16 grid grid-cols-3 gap-8 rounded-xl border border-zinc-200 bg-white p-8 shadow-card dark:border-zinc-800 dark:bg-zinc-900 sm:gap-12 sm:p-10">
           <div>
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 sm:text-5xl">2,000+</div>
-            <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400 sm:text-base">开发者使用</div>
+            <div className="text-5xl font-semibold text-zinc-900 dark:text-zinc-100 sm:text-6xl">2,000+</div>
+            <div className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 sm:text-base">开发者使用</div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 sm:text-5xl">10倍</div>
-            <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400 sm:text-base">效率提升</div>
+            <div className="text-5xl font-semibold text-zinc-900 dark:text-zinc-100 sm:text-6xl">10倍</div>
+            <div className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 sm:text-base">效率提升</div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 sm:text-5xl">2分钟</div>
-            <div className="mt-1 text-sm text-zinc-600 dark:text-zinc-400 sm:text-base">完成尽调</div>
+            <div className="text-5xl font-semibold text-zinc-900 dark:text-zinc-100 sm:text-6xl">2分钟</div>
+            <div className="mt-2 text-sm text-zinc-600 dark:text-zinc-400 sm:text-base">完成尽调</div>
           </div>
         </div>
         </div>
@@ -242,40 +238,46 @@ export function HeroSection() {
       {/* CTA */}
       <FadeIn delay={400}>
         <div className="mx-auto mt-16 max-w-2xl text-center">
-        <div className="rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50 p-10 shadow-xl dark:border-blue-800 dark:from-blue-950 dark:to-cyan-950">
-          <h2 className="mb-4 text-3xl font-bold text-zinc-950 dark:text-zinc-50">
+        <div className="rounded-xl border border-zinc-200 bg-white p-12 shadow-card dark:border-zinc-800 dark:bg-zinc-900 sm:p-16">
+          <h2 className="mb-4 text-3xl font-semibold text-zinc-950 dark:text-zinc-50">
             免费开始，无需信用卡
           </h2>
-          <p className="mb-8 text-lg text-zinc-600 dark:text-zinc-400">
+          <p className="mb-10 text-lg text-zinc-600 dark:text-zinc-400">
             获取 API Key，立即在 Claude Code 中使用
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" className="bg-blue-600 text-lg hover:bg-blue-700">
+            <Button size="lg" className="h-12 bg-zinc-900 px-8 text-base font-medium text-white hover:bg-zinc-800 transition-colors dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">
               免费获取 API Key →
             </Button>
-            <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 text-lg hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+            <Button size="lg" variant="outline" className="h-12 border-zinc-300 px-8 text-base font-medium text-zinc-900 hover:bg-zinc-50 transition-colors dark:border-zinc-700 dark:text-zinc-100 dark:hover:bg-zinc-800">
               查看文档
             </Button>
           </div>
-          <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-zinc-600 dark:text-zinc-400">
-            <span className="flex items-center gap-1">
-              <svg className="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              10次/日免费
-            </span>
-            <span className="flex items-center gap-1">
-              <svg className="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              即时开通
-            </span>
-            <span className="flex items-center gap-1">
-              <svg className="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              无需信用卡
-            </span>
+          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-zinc-600 dark:text-zinc-400">
+            <div className="flex items-center gap-2">
+              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800">
+                <svg className="h-3 w-3 text-zinc-600 dark:text-zinc-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <span>10次/日免费</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800">
+                <svg className="h-3 w-3 text-zinc-600 dark:text-zinc-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <span>即时开通</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800">
+                <svg className="h-3 w-3 text-zinc-600 dark:text-zinc-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <span>无需信用卡</span>
+            </div>
           </div>
         </div>
         </div>

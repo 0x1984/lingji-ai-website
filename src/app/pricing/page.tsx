@@ -108,10 +108,10 @@ export default function PricingPage() {
       <Header />
       <main className="flex-1">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 to-cyan-50 py-24 dark:from-blue-950 dark:to-cyan-950">
+      <section className="bg-zinc-50 py-32 dark:bg-zinc-950">
         <div className="container max-w-screen-2xl">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-zinc-50">
+            <h1 className="mb-6 text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl dark:text-zinc-50">
               简单透明的定价
             </h1>
             <p className="text-xl text-zinc-600 dark:text-zinc-400">
@@ -128,22 +128,22 @@ export default function PricingPage() {
             {plans.map((plan, index) => (
               <FadeIn key={plan.name} delay={index * 100}>
                 <div
-                  className={`relative rounded-3xl border-2 p-8 ${
+                  className={`relative rounded-2xl border p-8 transition-all duration-200 ${
                     plan.popular
-                      ? "border-blue-600 bg-white shadow-2xl dark:border-blue-400 dark:bg-zinc-900"
-                      : "border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900"
+                      ? "border-zinc-900 bg-white shadow-card-hover scale-105 dark:border-zinc-100 dark:bg-zinc-900"
+                      : "border-zinc-200 bg-white shadow-card hover:shadow-card-hover dark:border-zinc-800 dark:bg-zinc-900"
                   }`}
                 >
                   {plan.badge && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <span className="rounded-full bg-blue-600 px-4 py-1 text-sm font-semibold text-white">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="rounded-full bg-zinc-900 px-3 py-1 text-xs font-semibold text-white dark:bg-white dark:text-zinc-900">
                         {plan.badge}
                       </span>
                     </div>
                   )}
 
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-zinc-950 dark:text-zinc-50">
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">
                       {plan.name}
                     </h3>
                     <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
@@ -151,9 +151,9 @@ export default function PricingPage() {
                     </p>
                   </div>
 
-                  <div className="mb-6">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-bold text-zinc-950 dark:text-zinc-50">
+                  <div className="mb-8">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-5xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-100">
                         {plan.price}
                       </span>
                       <span className="text-zinc-600 dark:text-zinc-400">
@@ -167,13 +167,13 @@ export default function PricingPage() {
                     )}
                   </div>
 
-                  <Link href={plan.href}>
+                  <Link href={plan.href} className="block">
                     <Button
                       size="lg"
-                      className={`w-full ${
+                      className={`w-full h-12 text-base font-medium transition-all duration-200 ${
                         plan.popular
-                          ? "bg-blue-600 hover:bg-blue-700"
-                          : "border-zinc-300 bg-white text-zinc-950 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700"
+                          ? "bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100"
+                          : "border-zinc-300 bg-white text-zinc-900 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:bg-zinc-800"
                       }`}
                       variant={plan.popular ? "default" : "outline"}
                     >
@@ -181,7 +181,7 @@ export default function PricingPage() {
                     </Button>
                   </Link>
 
-                  <ul className="mt-8 space-y-4">
+                  <ul className="mt-8 space-y-3">
                     {plan.features.map((feature) => (
                       <li
                         key={feature.name}
@@ -190,7 +190,7 @@ export default function PricingPage() {
                         <Check
                           className={`h-5 w-5 flex-shrink-0 ${
                             feature.included
-                              ? "text-blue-600 dark:text-blue-400"
+                              ? "text-zinc-900 dark:text-zinc-100"
                               : "text-zinc-300 dark:text-zinc-700"
                           }`}
                         />
