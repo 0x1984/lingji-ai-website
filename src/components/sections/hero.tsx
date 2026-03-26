@@ -15,7 +15,7 @@ export function HeroSection() {
       <FadeIn>
         <div className="mx-auto max-w-4xl text-center">
         <Badge className="mb-6 text-base px-4 py-2" variant="secondary">
-          开源 Commands + MCP Server
+          企业尽调，10倍提升效率
         </Badge>
         <h1 className="mb-8 text-5xl font-bold tracking-tight text-zinc-950 sm:text-6xl lg:text-7xl dark:text-zinc-50">
           在Claude Code中<br />
@@ -24,8 +24,7 @@ export function HeroSection() {
           </span>
         </h1>
         <p className="mb-10 max-w-2xl text-xl text-zinc-600 dark:text-zinc-400 sm:text-lg">
-          <span className="font-semibold text-zinc-900 dark:text-zinc-100">免费开源</span>的 Commands，
-          获取 API Key 解锁企业数据查询
+          AI驱动的企业数据查询平台
           <br />
           <span className="text-zinc-500 dark:text-zinc-500">
             9个Commands • 股权穿透 • 关联关系 • 风险评估
@@ -245,17 +244,17 @@ export function HeroSection() {
         <div className="mx-auto mt-16 max-w-2xl text-center">
         <div className="rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50 p-10 shadow-xl dark:border-blue-800 dark:from-blue-950 dark:to-cyan-950">
           <h2 className="mb-4 text-3xl font-bold text-zinc-950 dark:text-zinc-50">
-            开源 Commands，免费使用
+            免费开始，无需信用卡
           </h2>
           <p className="mb-8 text-lg text-zinc-600 dark:text-zinc-400">
-            获取免费 API Key，解锁企业数据查询功能
+            获取 API Key，立即在 Claude Code 中使用
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button size="lg" className="bg-blue-600 text-lg hover:bg-blue-700">
-              获取免费 API Key →
+              免费获取 API Key →
             </Button>
             <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 text-lg hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
-              查看 GitHub 仓库
+              查看文档
             </Button>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-zinc-600 dark:text-zinc-400">
