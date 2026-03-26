@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
+import { Header } from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "定价 - 灵吉AI",
@@ -103,7 +104,9 @@ const faqs = [
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen">
+    <div className="flex flex-col font-sans">
+      <Header />
+      <main className="flex-1">
       {/* Hero */}
       <section className="bg-gradient-to-br from-blue-50 to-cyan-50 py-24 dark:from-blue-950 dark:to-cyan-950">
         <div className="container max-w-screen-2xl">
@@ -253,6 +256,79 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-zinc-200 bg-zinc-50 py-12 dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="container max-w-screen-2xl">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            <div>
+              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">产品</h3>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <Link href="/#features" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                    功能
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                    定价
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/docs" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                    文档
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">公司</h3>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <Link href="/about" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                    关于我们
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                    博客
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                    联系我们
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">法律</h3>
+              <ul className="space-y-3 text-sm">
+                <li>
+                  <Link href="/privacy" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                    隐私政策
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                    服务条款
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">灵吉AI</h3>
+              <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">
+                企业数据，AI原生
+              </p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-500">
+                © 2026 灵吉AI. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
