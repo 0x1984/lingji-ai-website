@@ -102,32 +102,60 @@ website/
 - 激活率: 67%
 - 付费转化率: 20-30%
 
-## 部署
+## 🚀 部署
 
-### Vercel（推荐）
+### 快速部署到Vercel（推荐）
+
+**最简单的方式 - 通过GitHub集成**：
+
+1. **推送代码到GitHub**：
+   ```bash
+   git add .
+   git commit -m "灵吉AI网站上线"
+   git push origin main
+   ```
+
+2. **在Vercel上部署**：
+   - 访问 https://vercel.com/new
+   - 选择GitHub仓库
+   - Vercel会自动检测Next.js并配置
+   - 点击"Deploy"即可
+
+**详细步骤请查看**: [DEPLOY.md](./DEPLOY.md)
+
+### 手动部署命令
 
 ```bash
-npm install -g vercel
-vercel
+# 1. 构建项目
+npm run build
+
+# 2. 启动生产服务器
+npm start
 ```
 
 ### 其他平台
 
-- Netlify
-- AWS Amplify
-- Cloudflare Pages
+- **Netlify**: 支持Next.js，一键部署
+- **AWS Amplify**: 全托管服务
+- **Cloudflare Pages**: 全球CDN加速
 
-## 环境变量
+## 🔧 环境变量
 
-创建 `.env.local`:
+创建 `.env.local` 文件：
 
 ```bash
-ENTERPRISE_API_BASE_URL=https://your-api.com
-ENTERPRISE_API_KEY=your_api_key
+# 复制示例文件
+cp .env.example .env.local
+
+# 编辑配置
+# ENTERPRISE_API_BASE_URL=https://your-api.com
+# ENTERPRISE_API_KEY=your_api_key
 ```
 
-## 相关文档
+## 📚 相关文档
 
+- [部署指南](./DEPLOY.md) - 详细的部署步骤
+- [测试清单](./TESTING.md) - 功能验证清单
 - [网站规划](../docs/website-plan.md)
 - [商业模式](../docs/Business_Model.md)
 - [转化策略](../docs/Conversion_Strategy.md)
