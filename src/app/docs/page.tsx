@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Check, ChevronRight, BookOpen, Settings, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Header } from "@/components/header/header";
@@ -126,13 +127,21 @@ export default function DocsPage() {
       <Header />
       <main className="flex-1">
       {/* Hero */}
-      <section className="bg-zinc-50 py-32 dark:bg-zinc-950">
-        <div className="container max-w-screen-2xl">
+      <section className="relative overflow-hidden bg-zinc-950 py-32 dark:bg-white">
+        {/* 背景装饰 */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-cyan-500 to-purple-600" />
+        </div>
+
+        <div className="relative container max-w-screen-2xl">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl dark:text-zinc-50">
+            <Badge className="mb-6 border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-300 backdrop-blur-sm dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-600">
+              开发者文档
+            </Badge>
+            <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl dark:text-zinc-950">
               快速开始使用灵吉AI
             </h1>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400">
+            <p className="text-xl text-zinc-300 dark:text-zinc-600">
               4步完成配置，立即在 Claude Code 中查询企业数据
             </p>
           </div>
@@ -140,19 +149,20 @@ export default function DocsPage() {
       </section>
 
       {/* Content */}
-      <section className="container max-w-screen-2xl py-24">
-        <div className="mx-auto max-w-5xl">
-          {sections.map((section, sectionIndex) => (
-            <FadeIn key={section.title} delay={sectionIndex * 100}>
-              <div className="mb-16">
-                <div className="mb-8 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-                    <section.icon className="h-6 w-6 text-zinc-900 dark:text-zinc-100" />
+      <section className="bg-zinc-900 py-24 dark:bg-zinc-50">
+        <div className="container max-w-screen-2xl">
+          <div className="mx-auto max-w-5xl">
+            {sections.map((section, sectionIndex) => (
+              <FadeIn key={section.title} delay={sectionIndex * 100}>
+                <div className="mb-16">
+                  <div className="mb-8 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-blue-500/30 bg-blue-950/40 backdrop-blur-sm dark:border-blue-500/30 dark:bg-blue-50">
+                      <section.icon className="h-6 w-6 text-blue-400 dark:text-blue-600" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-white dark:text-zinc-950">
+                      {section.title}
+                    </h2>
                   </div>
-                  <h2 className="text-3xl font-semibold text-zinc-950 dark:text-zinc-50">
-                    {section.title}
-                  </h2>
-                </div>
 
                 {/* 快速开始 */}
                 {section.steps && (
@@ -160,17 +170,17 @@ export default function DocsPage() {
                     {section.steps.map((step, stepIndex) => (
                       <Card
                         key={stepIndex}
-                        className="border shadow-card dark:border-zinc-800"
+                        className="border-2 border-zinc-800 bg-zinc-950/50 backdrop-blur-sm dark:border-zinc-200 dark:bg-white"
                       >
                         <CardHeader>
-                          <CardTitle className="text-xl font-semibold">{step.title}</CardTitle>
-                          <CardDescription className="text-base">
+                          <CardTitle className="text-xl font-semibold text-white dark:text-zinc-900">{step.title}</CardTitle>
+                          <CardDescription className="text-base text-zinc-400 dark:text-zinc-600">
                             {step.description}
                           </CardDescription>
                         </CardHeader>
                         {step.code && (
                           <CardContent>
-                            <pre className="overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-950">
+                            <pre className="overflow-x-auto rounded-lg border border-zinc-700 bg-zinc-950/80 p-4 text-sm text-zinc-300 backdrop-blur-sm dark:border-zinc-300 dark:bg-zinc-100 dark:text-zinc-700">
                               <code>{step.code}</code>
                             </pre>
                           </CardContent>
@@ -178,7 +188,7 @@ export default function DocsPage() {
                         {step.action && (
                           <CardContent>
                             <Link href={step.actionHref}>
-                              <Button className="h-10 bg-zinc-900 font-medium hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">
+                              <Button className="h-10 bg-gradient-to-r from-blue-600 to-cyan-600 font-medium text-white hover:from-blue-700 hover:to-cyan-700 shadow-lg shadow-blue-600/30 dark:from-blue-600 dark:to-cyan-600">
                                 {step.action}
                                 <ChevronRight className="ml-2 h-4 w-4" />
                               </Button>
@@ -196,36 +206,36 @@ export default function DocsPage() {
                     {section.commands.map((command, commandIndex) => (
                       <Card
                         key={commandIndex}
-                        className="border shadow-card hover:shadow-card-hover transition-shadow duration-200 dark:border-zinc-800"
+                        className="border-2 border-zinc-800 bg-zinc-950/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl dark:border-zinc-200 dark:bg-white dark:hover:shadow-xl"
                       >
                         <CardHeader>
-                          <CardTitle className="text-xl font-mono font-semibold text-zinc-900 dark:text-zinc-100">
+                          <CardTitle className="text-xl font-mono font-semibold text-white dark:text-zinc-900">
                             {command.name}
                           </CardTitle>
-                          <CardDescription className="text-base">
+                          <CardDescription className="text-base text-zinc-400 dark:text-zinc-600">
                             {command.description}
                           </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div>
-                            <p className="mb-2 text-sm font-medium text-zinc-950 dark:text-zinc-50">
+                            <p className="mb-2 text-sm font-medium text-zinc-300 dark:text-zinc-700">
                               示例：
                             </p>
-                            <pre className="overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-3 text-xs dark:border-zinc-800 dark:bg-zinc-950">
+                            <pre className="overflow-x-auto rounded-lg border border-zinc-700 bg-zinc-950/80 p-3 text-xs text-zinc-300 backdrop-blur-sm dark:border-zinc-300 dark:bg-zinc-100 dark:text-zinc-700">
                               <code>{command.example}</code>
                             </pre>
                           </div>
                           <div>
-                            <p className="mb-2 text-sm font-medium text-zinc-950 dark:text-zinc-50">
+                            <p className="mb-2 text-sm font-medium text-zinc-300 dark:text-zinc-700">
                               返回内容：
                             </p>
                             <ul className="space-y-1">
                               {command.details.map((detail, detailIndex) => (
                                 <li
                                   key={detailIndex}
-                                  className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400"
+                                  className="flex items-center gap-2 text-sm text-zinc-400 dark:text-zinc-600"
                                 >
-                                  <Check className="h-4 w-4 text-zinc-900 dark:text-zinc-100" />
+                                  <Check className="h-4 w-4 text-blue-400 dark:text-blue-600" />
                                   {detail}
                                 </li>
                               ))}
@@ -243,11 +253,11 @@ export default function DocsPage() {
                     {section.topics.map((topic, topicIndex) => (
                       <Card
                         key={topicIndex}
-                        className="border shadow-card dark:border-zinc-800"
+                        className="border-2 border-zinc-800 bg-zinc-950/50 backdrop-blur-sm dark:border-zinc-200 dark:bg-white"
                       >
                         <CardHeader>
-                          <CardTitle className="text-xl font-semibold">{topic.title}</CardTitle>
-                          <CardDescription className="text-base">
+                          <CardTitle className="text-xl font-semibold text-white dark:text-zinc-900">{topic.title}</CardTitle>
+                          <CardDescription className="text-base text-zinc-400 dark:text-zinc-600">
                             {topic.description}
                           </CardDescription>
                         </CardHeader>
@@ -257,9 +267,9 @@ export default function DocsPage() {
                               {topic.steps.map((step, stepIndex) => (
                                 <li
                                   key={stepIndex}
-                                  className="flex gap-3 text-sm text-zinc-700 dark:text-zinc-300"
+                                  className="flex gap-3 text-sm text-zinc-300 dark:text-zinc-700"
                                 >
-                                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-zinc-900 text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-900">
+                                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white dark:bg-blue-600">
                                     {stepIndex + 1}
                                   </span>
                                   {step}
@@ -268,7 +278,7 @@ export default function DocsPage() {
                             </ol>
                           )}
                           {topic.code && (
-                            <pre className="overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-sm dark:border-zinc-800 dark:bg-zinc-950">
+                            <pre className="overflow-x-auto rounded-lg border border-zinc-700 bg-zinc-950/80 p-4 text-sm text-zinc-300 backdrop-blur-sm dark:border-zinc-300 dark:bg-zinc-100 dark:text-zinc-700">
                               <code>{topic.code}</code>
                             </pre>
                           )}
@@ -277,12 +287,12 @@ export default function DocsPage() {
                               {topic.issues.map((issue, issueIndex) => (
                                 <div
                                   key={issueIndex}
-                                  className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900"
+                                  className="rounded-lg border-2 border-red-500/30 bg-red-950/40 p-4 backdrop-blur-sm dark:border-red-200 dark:bg-red-50"
                                 >
-                                  <p className="mb-2 text-sm font-medium text-red-600 dark:text-red-400">
+                                  <p className="mb-2 text-sm font-medium text-red-400 dark:text-red-600">
                                     问题：{issue.problem}
                                   </p>
-                                  <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                                  <p className="text-sm text-zinc-300 dark:text-zinc-700">
                                     解决：{issue.solution}
                                   </p>
                                 </div>
@@ -298,21 +308,25 @@ export default function DocsPage() {
             </FadeIn>
           ))}
         </div>
+        </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-zinc-50 py-24 dark:bg-zinc-950">
-        <div className="container max-w-screen-2xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-zinc-950 to-zinc-900 py-24 dark:from-white dark:to-zinc-50">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-cyan-500 to-purple-600" />
+        </div>
+        <div className="relative container max-w-screen-2xl">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-semibold text-zinc-950 dark:text-zinc-50">
+            <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl dark:text-zinc-950">
               还没有 API Key？
             </h2>
-            <p className="mb-8 text-xl text-zinc-600 dark:text-zinc-400">
+            <p className="mb-8 text-xl text-zinc-400 dark:text-zinc-600">
               免费获取，立即开始使用
             </p>
             <Link href="/register">
-              <Button size="lg" className="h-12 bg-zinc-900 font-medium hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">
-                获取免费 API Key
+              <Button size="lg" className="h-14 bg-gradient-to-r from-blue-600 to-cyan-600 px-10 text-lg font-semibold text-white shadow-lg shadow-blue-600/30 hover:from-blue-700 hover:to-cyan-700 hover:shadow-xl">
+                获取免费 API Key →
               </Button>
             </Link>
           </div>
@@ -321,72 +335,99 @@ export default function DocsPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-200 bg-zinc-50 py-12 dark:border-zinc-800 dark:bg-zinc-900">
+      <footer className="border-t border-zinc-800 bg-zinc-950 py-12 dark:border-zinc-200 dark:bg-white">
         <div className="container max-w-screen-2xl">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {/* 品牌区 */}
             <div>
-              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">产品</h3>
-              <ul className="space-y-3 text-sm">
+              <div className="mb-4 flex items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 text-base font-bold text-white shadow-lg">
+                  灵
+                </div>
+                <span className="text-lg font-bold text-white dark:text-zinc-900">
+                  灵吉AI
+                </span>
+              </div>
+              <p className="mb-6 text-sm text-zinc-400 dark:text-zinc-600 max-w-xs">
+                企业数据，AI原生。在 Claude Code 中一键完成企业尽调。
+              </p>
+            </div>
+
+            {/* 使用场景 */}
+            <div>
+              <h3 className="mb-4 text-sm font-semibold text-white dark:text-zinc-900">使用场景</h3>
+              <ul className="space-y-2">
                 <li>
-                  <Link href="/#features" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/#risk-summary" className="text-sm text-zinc-400 transition-colors hover:text-blue-400 dark:text-zinc-600 dark:hover:text-blue-600">
+                    风险评估
+                  </a>
+                </li>
+                <li>
+                  <a href="/#ownership-chain" className="text-sm text-zinc-400 transition-colors hover:text-purple-400 dark:text-zinc-600 dark:hover:text-purple-600">
+                    股权穿透
+                  </a>
+                </li>
+                <li>
+                  <a href="/#due-diligence" className="text-sm text-zinc-400 transition-colors hover:text-orange-400 dark:text-zinc-600 dark:hover:text-orange-600">
+                    完整尽调
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* 产品 */}
+            <div>
+              <h3 className="mb-4 text-sm font-semibold text-white dark:text-zinc-900">产品</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/#features" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     功能
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/pricing" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/#pricing" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     定价
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/docs" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/docs" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     文档
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
+
+            {/* 公司 */}
             <div>
-              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">公司</h3>
-              <ul className="space-y-3 text-sm">
+              <h3 className="mb-4 text-sm font-semibold text-white dark:text-zinc-900">公司</h3>
+              <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/about" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     关于我们
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
-                    博客
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/contact" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     联系我们
-                  </Link>
+                  </a>
                 </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">法律</h3>
-              <ul className="space-y-3 text-sm">
                 <li>
-                  <Link href="/privacy" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/privacy" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     隐私政策
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
-                    服务条款
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
-            <div>
-              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">灵吉AI</h3>
-              <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">
-                企业数据，AI原生
-              </p>
-              <p className="text-xs text-zinc-500 dark:text-zinc-500">
-                © 2026 灵吉AI. All rights reserved.
-              </p>
+          </div>
+
+          {/* 底部版权 */}
+          <div className="mt-12 border-t border-zinc-800 pt-8 text-center text-sm text-zinc-500 dark:border-zinc-200">
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between">
+              <p>&copy; 2026 灵吉AI. All rights reserved.</p>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-xs">系统正常运行</span>
+              </div>
             </div>
           </div>
         </div>

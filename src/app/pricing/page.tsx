@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/ui/fade-in";
 import { Header } from "@/components/header/header";
 
@@ -107,224 +108,265 @@ export default function PricingPage() {
     <div className="flex flex-col font-sans">
       <Header />
       <main className="flex-1">
-      {/* Hero */}
-      <section className="bg-zinc-50 py-32 dark:bg-zinc-950">
-        <div className="container max-w-screen-2xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="mb-6 text-5xl font-semibold tracking-tight text-zinc-950 sm:text-6xl dark:text-zinc-50">
-              简单透明的定价
-            </h1>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400">
-              免费开始，按需升级。无需信用卡，随时取消。
-            </p>
+        {/* Hero - 深色背景 */}
+        <section className="relative overflow-hidden bg-zinc-950 py-32 dark:bg-white">
+          {/* 背景装饰 */}
+          <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-cyan-500 to-purple-600" />
           </div>
-        </div>
-      </section>
 
-      {/* Pricing Cards */}
-      <section className="container max-w-screen-2xl py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-3">
-            {plans.map((plan, index) => (
-              <FadeIn key={plan.name} delay={index * 100}>
-                <div
-                  className={`relative rounded-2xl border p-8 transition-all duration-200 ${
-                    plan.popular
-                      ? "border-zinc-900 bg-white shadow-card-hover scale-105 dark:border-zinc-100 dark:bg-zinc-900"
-                      : "border-zinc-200 bg-white shadow-card hover:shadow-card-hover dark:border-zinc-800 dark:bg-zinc-900"
-                  }`}
-                >
-                  {plan.badge && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="rounded-full bg-zinc-900 px-3 py-1 text-xs font-semibold text-white dark:bg-white dark:text-zinc-900">
-                        {plan.badge}
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50">
-                      {plan.name}
-                    </h3>
-                    <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                      {plan.description}
-                    </p>
-                  </div>
-
-                  <div className="mb-8">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-5xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-100">
-                        {plan.price}
-                      </span>
-                      <span className="text-zinc-600 dark:text-zinc-400">
-                        {plan.period}
-                      </span>
-                    </div>
-                    {plan.originalPrice && (
-                      <p className="mt-2 text-sm text-zinc-500 line-through dark:text-zinc-500">
-                        原价 {plan.originalPrice}{plan.period}
-                      </p>
-                    )}
-                  </div>
-
-                  <Link href={plan.href} className="block">
-                    <Button
-                      size="lg"
-                      className={`w-full h-12 text-base font-medium transition-all duration-200 ${
-                        plan.popular
-                          ? "bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100"
-                          : "border-zinc-300 bg-white text-zinc-900 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:bg-zinc-800"
-                      }`}
-                      variant={plan.popular ? "default" : "outline"}
-                    >
-                      {plan.cta}
-                    </Button>
-                  </Link>
-
-                  <ul className="mt-8 space-y-3">
-                    {plan.features.map((feature) => (
-                      <li
-                        key={feature.name}
-                        className="flex items-start gap-3 text-sm"
-                      >
-                        <Check
-                          className={`h-5 w-5 flex-shrink-0 ${
-                            feature.included
-                              ? "text-zinc-900 dark:text-zinc-100"
-                              : "text-zinc-300 dark:text-zinc-700"
-                          }`}
-                        />
-                        <span
-                          className={
-                            feature.included
-                              ? "text-zinc-700 dark:text-zinc-300"
-                              : "text-zinc-400 line-through dark:text-zinc-600"
-                          }
-                        >
-                          {feature.name}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-zinc-50 py-24 dark:bg-zinc-950">
-        <div className="container max-w-screen-2xl">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="mb-12 text-center text-3xl font-bold text-zinc-950 dark:text-zinc-50">
-              常见问题
-            </h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <FadeIn key={index} delay={index * 50}>
-                  <div className="rounded-2xl border-2 border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
-                    <h3 className="mb-3 text-lg font-semibold text-zinc-950 dark:text-zinc-50">
-                      {faq.question}
-                    </h3>
-                    <p className="text-zinc-600 dark:text-zinc-400">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </FadeIn>
-              ))}
+          <div className="relative container max-w-screen-2xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <Badge className="mb-6 border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-300 backdrop-blur-sm dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-600">
+                定价方案
+              </Badge>
+              <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl dark:text-zinc-950">
+                简单透明
+                <br className="hidden sm:block" />
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  按需升级
+                </span>
+              </h1>
+              <p className="text-xl text-zinc-300 dark:text-zinc-600">
+                免费开始，按需升级。无需信用卡，随时取消。
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-24">
-        <div className="container max-w-screen-2xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold text-zinc-950 dark:text-zinc-50">
-              还没有决定？
-            </h2>
-            <p className="mb-8 text-xl text-zinc-600 dark:text-zinc-400">
-              免费版无需信用卡，立即开始使用
-            </p>
-            <Link href="/register">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                免费开始
-              </Button>
-            </Link>
+        {/* Pricing Cards - 深色背景 */}
+        <section className="bg-zinc-900 py-24 dark:bg-zinc-50">
+          <div className="container max-w-screen-2xl">
+            <div className="mx-auto max-w-7xl">
+              <div className="grid gap-8 lg:grid-cols-3">
+                {plans.map((plan, index) => (
+                  <FadeIn key={plan.name} delay={index * 100}>
+                    <div
+                      className={`relative rounded-2xl border-2 p-8 transition-all duration-300 hover:scale-105 ${
+                        plan.popular
+                          ? "border-blue-600 bg-zinc-950/50 backdrop-blur-sm shadow-2xl shadow-blue-600/20 dark:border-blue-600 dark:bg-white dark:shadow-xl"
+                          : "border-zinc-800 bg-zinc-950/50 backdrop-blur-sm dark:border-zinc-300 dark:bg-white"
+                      }`}
+                    >
+                      {plan.badge && (
+                        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                          <Badge className="bg-blue-600 text-white shadow-lg shadow-blue-600/30">
+                            {plan.badge}
+                          </Badge>
+                        </div>
+                      )}
+
+                      <div className="mb-8">
+                        <h3 className="text-xl font-semibold text-white dark:text-zinc-900">
+                          {plan.name}
+                        </h3>
+                        <p className="mt-2 text-sm text-zinc-400 dark:text-zinc-600">
+                          {plan.description}
+                        </p>
+                      </div>
+
+                      <div className="mb-8">
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-5xl font-semibold tracking-tight text-white dark:text-zinc-900">
+                            {plan.price}
+                          </span>
+                          <span className="text-zinc-500 dark:text-zinc-500">
+                            {plan.period}
+                          </span>
+                        </div>
+                        {plan.originalPrice && (
+                          <p className="mt-2 text-sm text-zinc-500 line-through dark:text-zinc-500">
+                            原价 {plan.originalPrice}{plan.period}
+                          </p>
+                        )}
+                      </div>
+
+                      <Link href={plan.href} className="block">
+                        <Button
+                          size="lg"
+                          className={`w-full h-12 text-base font-medium transition-all duration-200 ${
+                            plan.popular
+                              ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/30 dark:bg-blue-600"
+                              : "border-zinc-700 bg-zinc-900 text-white hover:bg-zinc-800 dark:border-zinc-300 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100"
+                          }`}
+                          variant={plan.popular ? "default" : "outline"}
+                        >
+                          {plan.cta}
+                        </Button>
+                      </Link>
+
+                      <ul className="mt-8 space-y-3">
+                        {plan.features.map((feature) => (
+                          <li
+                            key={feature.name}
+                            className="flex items-start gap-3 text-sm"
+                          >
+                            <Check
+                              className={`h-5 w-5 flex-shrink-0 ${
+                                feature.included
+                                  ? "text-blue-400 dark:text-blue-600"
+                                  : "text-zinc-600 dark:text-zinc-500"
+                              }`}
+                            />
+                            <span
+                              className={
+                                feature.included
+                                  ? "text-zinc-300 dark:text-zinc-700"
+                                  : "text-zinc-600 line-through dark:text-zinc-500"
+                              }
+                            >
+                              {feature.name}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* FAQ - 深色背景 */}
+        <section className="bg-zinc-950 py-24 dark:bg-white">
+          <div className="container max-w-screen-2xl">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="mb-12 text-center text-4xl font-bold text-white sm:text-5xl dark:text-zinc-950">
+                常见问题
+              </h2>
+              <div className="space-y-6">
+                {faqs.map((faq, index) => (
+                  <FadeIn key={index} delay={index * 50}>
+                    <div className="rounded-2xl border-2 border-zinc-800 bg-zinc-900/50 backdrop-blur-sm p-6 dark:border-zinc-200 dark:bg-zinc-100">
+                      <h3 className="mb-3 text-lg font-semibold text-white dark:text-zinc-900">
+                        {faq.question}
+                      </h3>
+                      <p className="text-zinc-400 dark:text-zinc-700">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA - 深色背景 */}
+        <section className="bg-gradient-to-br from-zinc-950 to-zinc-900 py-24 dark:from-white dark:to-zinc-50">
+          <div className="container max-w-screen-2xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="mb-6 text-4xl font-bold text-white sm:text-5xl dark:text-zinc-950">
+                还没有决定？
+              </h2>
+              <p className="mb-8 text-xl text-zinc-400 dark:text-zinc-600">
+                免费版无需信用卡，立即开始使用
+              </p>
+              <Link href="/register">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 px-8 text-lg font-semibold text-white shadow-lg shadow-blue-600/30 hover:from-blue-700 hover:to-cyan-700 hover:shadow-xl">
+                  免费开始 →
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-zinc-200 bg-zinc-50 py-12 dark:border-zinc-800 dark:bg-zinc-900">
+      {/* Footer - 使用主页的 footer */}
+      <footer className="border-t border-zinc-800 bg-zinc-950 py-12 dark:border-zinc-200 dark:bg-white">
         <div className="container max-w-screen-2xl">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {/* 品牌区 */}
             <div>
-              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">产品</h3>
-              <ul className="space-y-3 text-sm">
+              <div className="mb-4 flex items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 text-base font-bold text-white shadow-lg">
+                  灵
+                </div>
+                <span className="text-lg font-bold text-white dark:text-zinc-900">
+                  灵吉AI
+                </span>
+              </div>
+              <p className="mb-6 text-sm text-zinc-400 dark:text-zinc-600 max-w-xs">
+                企业数据，AI原生。在 Claude Code 中一键完成企业尽调。
+              </p>
+            </div>
+
+            {/* 使用场景 */}
+            <div>
+              <h3 className="mb-4 text-sm font-semibold text-white dark:text-zinc-900">使用场景</h3>
+              <ul className="space-y-2">
                 <li>
-                  <Link href="/#features" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/#risk-summary" className="text-sm text-zinc-400 transition-colors hover:text-blue-400 dark:text-zinc-600 dark:hover:text-blue-600">
+                    风险评估
+                  </a>
+                </li>
+                <li>
+                  <a href="/#ownership-chain" className="text-sm text-zinc-400 transition-colors hover:text-purple-400 dark:text-zinc-600 dark:hover:text-purple-600">
+                    股权穿透
+                  </a>
+                </li>
+                <li>
+                  <a href="/#due-diligence" className="text-sm text-zinc-400 transition-colors hover:text-orange-400 dark:text-zinc-600 dark:hover:text-orange-600">
+                    完整尽调
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* 产品 */}
+            <div>
+              <h3 className="mb-4 text-sm font-semibold text-white dark:text-zinc-900">产品</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/#features" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     功能
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/pricing" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/pricing" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     定价
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/docs" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/docs" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     文档
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
+
+            {/* 公司 */}
             <div>
-              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">公司</h3>
-              <ul className="space-y-3 text-sm">
+              <h3 className="mb-4 text-sm font-semibold text-white dark:text-zinc-900">公司</h3>
+              <ul className="space-y-2">
                 <li>
-                  <Link href="/about" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/about" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     关于我们
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
-                    博客
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/contact" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     联系我们
-                  </Link>
+                  </a>
                 </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">法律</h3>
-              <ul className="space-y-3 text-sm">
                 <li>
-                  <Link href="/privacy" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
+                  <a href="/privacy" className="text-sm text-zinc-400 transition-colors hover:text-white dark:text-zinc-600 dark:hover:text-zinc-900">
                     隐私政策
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/terms" className="text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50">
-                    服务条款
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
-            <div>
-              <h3 className="mb-4 font-semibold text-zinc-950 dark:text-zinc-50">灵吉AI</h3>
-              <p className="mb-4 text-sm text-zinc-600 dark:text-zinc-400">
-                企业数据，AI原生
-              </p>
-              <p className="text-xs text-zinc-500 dark:text-zinc-500">
-                © 2026 灵吉AI. All rights reserved.
-              </p>
+          </div>
+
+          {/* 底部版权 */}
+          <div className="mt-12 border-t border-zinc-800 pt-8 text-center text-sm text-zinc-500 dark:border-zinc-200">
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:justify-between">
+              <p>&copy; 2026 灵吉AI. All rights reserved.</p>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-xs">系统正常运行</span>
+              </div>
             </div>
           </div>
         </div>
