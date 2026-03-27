@@ -46,62 +46,64 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section className="container max-w-screen-2xl py-24">
+    <section className="bg-zinc-950 py-24 dark:bg-white">
       <FadeIn>
-        <div className="mx-auto max-w-4xl">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-zinc-950 sm:text-5xl dark:text-zinc-50">
-            常见问题
-          </h2>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 sm:text-lg">
-            快速了解灵吉AI的使用方法和功能
-          </p>
-        </div>
+        <div className="container max-w-screen-2xl">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <h2 className="mb-4 text-4xl font-bold text-white sm:text-5xl dark:text-zinc-950">
+                常见问题
+              </h2>
+              <p className="text-xl text-zinc-400 dark:text-zinc-600 sm:text-lg">
+                快速了解灵吉AI的使用方法和功能
+              </p>
+            </div>
 
-        <div className="mx-auto max-w-3xl">
-          <Accordion className="space-y-3 sm:space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="rounded-2xl border-2 border-zinc-200 bg-white px-5 py-1 dark:border-zinc-800 dark:bg-zinc-950 sm:px-6 sm:py-2"
-              >
-                <AccordionTrigger className="py-4 text-left text-base font-semibold text-zinc-900 hover:text-blue-600 dark:text-zinc-100 dark:hover:text-blue-400 sm:py-5 sm:text-lg">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-sm text-zinc-600 dark:text-zinc-400 sm:pb-5 sm:text-base">
-                  <div className="whitespace-pre-line leading-relaxed">
-                    {faq.answer}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+            <div className="mx-auto max-w-3xl">
+              <Accordion className="space-y-3 sm:space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="rounded-2xl border-2 border-zinc-800 bg-zinc-900 px-5 py-1 dark:border-zinc-200 dark:bg-zinc-100 sm:px-6 sm:py-2"
+                  >
+                    <AccordionTrigger className="py-4 text-left text-base font-semibold text-zinc-100 hover:text-blue-400 dark:text-zinc-900 dark:hover:text-blue-600 sm:py-5 sm:text-lg">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-4 text-sm text-zinc-400 dark:text-zinc-700 sm:pb-5 sm:text-base">
+                      <div className="whitespace-pre-line leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
 
-        {/* 仍需帮助 */}
-        <div className="mt-16 rounded-2xl border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-cyan-50 p-10 text-center dark:border-blue-800 dark:from-blue-950 dark:to-cyan-950">
-          <h3 className="mb-3 text-2xl font-bold text-zinc-950 dark:text-zinc-50">
-            仍需帮助？
-          </h3>
-          <p className="mb-6 text-lg text-zinc-700 dark:text-zinc-300">
-            我们的团队随时准备为您解答疑问
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <a
-              href="mailto:support@compdata.ai"
-              className="inline-flex h-11 items-center justify-center rounded-full bg-blue-600 px-6 text-base font-semibold text-white shadow-lg transition-all hover:bg-blue-700 hover:shadow-xl"
-            >
-              联系客服
-            </a>
-            <a
-              href="/docs"
-              className="inline-flex h-11 items-center justify-center rounded-full border-2 border-blue-600 px-6 text-base font-semibold text-blue-600 transition-all hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950"
-            >
-              查看文档
-            </a>
+            {/* 仍需帮助 */}
+            <div className="mx-auto mt-16 max-w-3xl rounded-2xl border-2 border-blue-500/30 bg-gradient-to-br from-blue-950 to-zinc-900 p-10 text-center shadow-2xl dark:border-blue-500/30 dark:from-blue-50 dark:to-white">
+              <h3 className="mb-3 text-2xl font-bold text-white dark:text-zinc-950">
+                仍需帮助？
+              </h3>
+              <p className="mb-6 text-lg text-zinc-400 dark:text-zinc-700">
+                我们的团队随时准备为您解答疑问
+              </p>
+              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+                <a
+                  href="mailto:support@compdata.ai"
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-blue-600 px-6 text-base font-semibold text-white shadow-lg shadow-blue-600/30 transition-all hover:bg-blue-700 hover:shadow-xl"
+                >
+                  联系客服
+                </a>
+                <a
+                  href="/docs"
+                  className="inline-flex h-11 items-center justify-center rounded-full border-2 border-blue-500 px-6 text-base font-semibold text-blue-400 transition-all hover:bg-blue-950 hover:text-blue-300 dark:border-blue-600 dark:text-blue-600 dark:hover:bg-blue-50"
+                >
+                  查看文档
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
         </div>
       </FadeIn>
     </section>
