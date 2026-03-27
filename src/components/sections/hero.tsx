@@ -170,26 +170,26 @@ export function HeroSection() {
                           <h3 className="mb-3 text-2xl font-bold text-white dark:text-zinc-950">
                             1天评估10个供应商，发现2家风险
                           </h3>
-                          <p className="text-base text-zinc-400 dark:text-zinc-600">
+                          <p className="text-base text-zinc-300 dark:text-zinc-600">
                             张老板 | 电商公司 | 100+员工
                           </p>
                         </div>
 
                         <div className="mb-8 space-y-5">
-                          <p className="text-lg leading-relaxed text-zinc-300 dark:text-zinc-700">
+                          <p className="text-lg leading-relaxed text-zinc-100 dark:text-zinc-700">
                             "以前要2天，现在1天就查完了10个供应商，还发现了2家有风险记录。"
                           </p>
 
-                          <div className="rounded-xl border border-zinc-700 bg-zinc-800/50 p-6 dark:border-zinc-200 dark:bg-zinc-50">
-                            <p className="mb-3 text-sm font-semibold text-zinc-300 dark:text-zinc-700">使用的命令</p>
-                            <code className="block rounded-lg border border-zinc-600 bg-zinc-900 px-4 py-3 text-sm font-mono text-cyan-400 dark:border-zinc-300 dark:bg-white dark:text-blue-600">
+                          <div className="rounded-xl border border-zinc-700 bg-zinc-800/80 p-6 dark:border-zinc-200 dark:bg-zinc-50">
+                            <p className="mb-3 text-sm font-semibold text-zinc-200 dark:text-zinc-700">使用的命令</p>
+                            <code className="block rounded-lg border border-zinc-600 bg-zinc-950 px-4 py-3 text-sm font-mono text-cyan-400 dark:border-zinc-300 dark:bg-white dark:text-blue-600">
                               ❯ /risk-summary "供应商A"
                             </code>
                           </div>
 
-                          <div className="rounded-xl border border-red-500/30 bg-red-950/50 p-6 dark:border-red-200 dark:bg-red-50">
-                            <p className="mb-4 text-sm font-semibold text-red-300 dark:text-red-700">关键发现</p>
-                            <div className="space-y-3 text-base text-red-200 dark:text-red-800">
+                          <div className="rounded-xl border border-red-500/50 bg-red-950/80 p-6 dark:border-red-200 dark:bg-red-50">
+                            <p className="mb-4 text-sm font-semibold text-red-200 dark:text-red-700">关键发现</p>
+                            <div className="space-y-3 text-base text-red-100 dark:text-red-800">
                               <div className="flex items-start gap-3">
                                 <svg className="mt-1 h-5 w-5 flex-shrink-0 text-red-400" fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
@@ -239,26 +239,26 @@ export function HeroSection() {
                           <h3 className="mb-3 text-2xl font-bold text-white dark:text-zinc-950">
                             5层股权穿透，发现隐形股东
                           </h3>
-                          <p className="text-base text-zinc-400 dark:text-zinc-600">
+                          <p className="text-base text-zinc-300 dark:text-zinc-600">
                             李律师 | XX律所合伙人 | 10年+经验
                           </p>
                         </div>
 
                         <div className="mb-8 space-y-5">
-                          <p className="text-lg leading-relaxed text-zinc-300 dark:text-zinc-700">
+                          <p className="text-lg leading-relaxed text-zinc-100 dark:text-zinc-700">
                             "用企查查查到第3层就断了。用灵吉AI查到第5层，发现了隐形股东。"
                           </p>
 
-                          <div className="rounded-xl border border-zinc-700 bg-zinc-800/50 p-6 dark:border-zinc-200 dark:bg-zinc-50">
-                            <p className="mb-3 text-sm font-semibold text-zinc-300 dark:text-zinc-700">使用的命令</p>
-                            <code className="block rounded-lg border border-zinc-600 bg-zinc-900 px-4 py-3 text-sm font-mono text-purple-400 dark:border-zinc-300 dark:bg-white dark:text-purple-600">
+                          <div className="rounded-xl border border-zinc-700 bg-zinc-800/80 p-6 dark:border-zinc-200 dark:bg-zinc-50">
+                            <p className="mb-3 text-sm font-semibold text-zinc-200 dark:text-zinc-700">使用的命令</p>
+                            <code className="block rounded-lg border border-zinc-600 bg-zinc-950 px-4 py-3 text-sm font-mono text-purple-400 dark:border-zinc-300 dark:bg-white dark:text-purple-600">
                               ❯ /ownership-chain "目标公司" --depth 5
                             </code>
                           </div>
 
-                          <div className="rounded-xl border border-purple-500/30 bg-purple-950/50 p-6 dark:border-purple-200 dark:bg-purple-50">
-                            <p className="mb-4 text-sm font-semibold text-purple-300 dark:text-purple-700">关键发现</p>
-                            <div className="space-y-3 text-base text-purple-200 dark:text-purple-800">
+                          <div className="rounded-xl border border-purple-500/50 bg-purple-950/80 p-6 dark:border-purple-200 dark:bg-purple-50">
+                            <p className="mb-4 text-sm font-semibold text-purple-200 dark:text-purple-700">关键发现</p>
+                            <div className="space-y-3 text-base text-purple-100 dark:text-purple-800">
                               <div className="flex items-start gap-3">
                                 <svg className="mt-1 h-5 w-5 flex-shrink-0 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -308,26 +308,26 @@ export function HeroSection() {
                           <h3 className="mb-3 text-2xl font-bold text-white dark:text-zinc-950">
                             发现竞品关联，避免投资风险
                           </h3>
-                          <p className="text-base text-zinc-400 dark:text-zinc-600">
+                          <p className="text-base text-zinc-300 dark:text-zinc-600">
                             王投资经理 | XX基金 | 专注早期投资
                           </p>
                         </div>
 
                         <div className="mb-8 space-y-5">
-                          <p className="text-lg leading-relaxed text-zinc-300 dark:text-zinc-700">
+                          <p className="text-lg leading-relaxed text-zinc-100 dark:text-zinc-700">
                             "尽调发现拟投项目和竞品公司有关联，这直接影响投资决策。"
                           </p>
 
-                          <div className="rounded-xl border border-zinc-700 bg-zinc-800/50 p-6 dark:border-zinc-200 dark:bg-zinc-50">
-                            <p className="mb-3 text-sm font-semibold text-zinc-300 dark:text-zinc-700">使用的命令</p>
-                            <code className="block rounded-lg border border-zinc-600 bg-zinc-900 px-4 py-3 text-sm font-mono text-orange-400 dark:border-zinc-300 dark:bg-white dark:text-orange-600">
+                          <div className="rounded-xl border border-zinc-700 bg-zinc-800/80 p-6 dark:border-zinc-200 dark:bg-zinc-50">
+                            <p className="mb-3 text-sm font-semibold text-zinc-200 dark:text-zinc-700">使用的命令</p>
+                            <code className="block rounded-lg border border-zinc-600 bg-zinc-950 px-4 py-3 text-sm font-mono text-orange-400 dark:border-zinc-300 dark:bg-white dark:text-orange-600">
                               ❯ /due-diligence "拟投公司" --full
                             </code>
                           </div>
 
-                          <div className="rounded-xl border border-orange-500/30 bg-orange-950/50 p-6 dark:border-orange-200 dark:bg-orange-50">
-                            <p className="mb-4 text-sm font-semibold text-orange-300 dark:text-orange-700">关键发现</p>
-                            <div className="space-y-3 text-base text-orange-200 dark:text-orange-800">
+                          <div className="rounded-xl border border-orange-500/50 bg-orange-950/80 p-6 dark:border-orange-200 dark:bg-orange-50">
+                            <p className="mb-4 text-sm font-semibold text-orange-200 dark:text-orange-700">关键发现</p>
+                            <div className="space-y-3 text-base text-orange-100 dark:text-orange-800">
                               <div className="flex items-start gap-3">
                                 <svg className="mt-1 h-5 w-5 flex-shrink-0 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
