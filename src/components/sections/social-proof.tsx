@@ -4,12 +4,13 @@ import { Separator } from "@/components/ui/separator";
 import { FadeIn } from "@/components/ui/fade-in";
 
 const companies = [
-  { name: "某电商巨头", shortName: "XX电商" },
-  { name: "知名红圈律所", shortName: "XX律所" },
-  { name: "头部VC基金", shortName: "XX资本" },
-  { name: "大型商业银行", shortName: "XX银行" },
-  { name: "500强企业", shortName: "XX制造" },
-  { name: "独角兽公司", shortName: "XX科技" },
+  { name: "字节跳动", shortName: "字节跳动" },
+  { name: "微众银行", shortName: "微众银行" },
+  { name: "蚂蚁金服", shortName: "蚂蚁金服" },
+  { name: "民生银行", shortName: "民生银行" },
+  { name: "中国移动", shortName: "中国移动" },
+  { name: "中国联通", shortName: "中国联通" },
+  { name: "梅赛德斯奔驰", shortName: "奔驰" },
 ];
 
 export function SocialProof() {
@@ -20,15 +21,15 @@ export function SocialProof() {
         {/* 数据展示 */}
         <div className="mb-16 grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
           <div className="text-center">
-            <div className="text-5xl font-semibold tracking-tight text-white dark:text-zinc-950 sm:text-6xl">2,000+</div>
+            <div className="text-5xl font-semibold tracking-tight text-white dark:text-zinc-950 sm:text-6xl">500+</div>
             <div className="mt-3 text-sm font-medium text-zinc-400 dark:text-zinc-600 sm:text-base">开发者</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-semibold tracking-tight text-white dark:text-zinc-950 sm:text-6xl">50,000+</div>
+            <div className="text-5xl font-semibold tracking-tight text-white dark:text-zinc-950 sm:text-6xl">10,000+</div>
             <div className="mt-3 text-sm font-medium text-zinc-400 dark:text-zinc-600 sm:text-base">尽调报告</div>
           </div>
           <div className="text-center">
-            <div className="text-5xl font-semibold tracking-tight text-white dark:text-zinc-950 sm:text-6xl">100,000+</div>
+            <div className="text-5xl font-semibold tracking-tight text-white dark:text-zinc-950 sm:text-6xl">50,000+</div>
             <div className="mt-3 text-sm font-medium text-zinc-400 dark:text-zinc-600 sm:text-base">小时节省</div>
           </div>
           <div className="text-center">

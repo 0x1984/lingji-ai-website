@@ -39,10 +39,10 @@ const useCases = [
     ),
     role: "律师",
     person: "李律师",
-    company: "XX律所合伙人 | 10年+经验",
+    company: "律所合伙人 | 10年+经验",
     title: "5层股权穿透",
     description: "发现隐形股东，揭示关联交易",
-    quote: "用企查查查到第3层就断了。用灵吉AI查到第5层，发现了隐形股东。",
+    quote: "用现在工具查到第3层就断了。用灵吉AI查到第5层，发现了隐形股东。",
     command: '❯ /ownership-chain "目标公司" --depth 5',
     metrics: [
       { label: "穿透深度", value: "5层" },
@@ -61,11 +61,11 @@ const useCases = [
       </svg>
     ),
     role: "投资人",
-    person: "王投资经理",
-    company: "XX基金 | 专注早期投资",
+    person: "王总监",
+    company: "基金经理 | 专注早期投资",
     title: "发现竞品关联",
     description: "避免投资风险，影响决策",
-    quote: "尽调发现拟投项目和竞品公司有关联，这直接影响投资决策。",
+    quote: "尽调发现拟投项目的创始人还创建竞品公司，这直接影响投资决策。",
     command: '❯ /due-diligence "拟投公司" --full',
     metrics: [
       { label: "发现关联", value: "竞品" },
@@ -105,21 +105,20 @@ export function HeroSection() {
               <div className="text-center">
                 {/* Badge */}
                 <Badge className="mb-8 inline-flex border border-blue-500/30 bg-blue-500/10 px-4 py-1.5 text-sm font-medium text-blue-300 backdrop-blur-sm dark:border-blue-500/30 dark:bg-blue-500/10 dark:text-blue-400">
-                  企业尽调，10倍提升效率
+                  企业数据，尽在掌握。告别 AI 幻觉，10倍提升效率
                 </Badge>
 
                 {/* 主标题 */}
                 <h1 className="mb-8 text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl dark:text-zinc-900 leading-[1.05]">
-                  企业数据，
-                  <br className="hidden sm:block" />
+                  精准数据，
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    AI原生
+                    零 AI 幻觉
                   </span>
                 </h1>
 
                 {/* 副标题 */}
                 <p className="mx-auto mb-12 max-w-3xl text-xl font-normal leading-relaxed text-zinc-300 sm:text-2xl dark:text-zinc-600">
-                  在 Claude Code 中自动生成企业尽调报告。股权穿透、关联关系、风险评估，2分钟完成。
+                  一键集成到智能体框架（龙虾，Claude Code，Deerflow 等）。企业尽调报告（股权穿透、关联关系、风险评估），2分钟完成。
                 </p>
 
                 {/* CTA 按钮组 */}
@@ -142,7 +141,7 @@ export function HeroSection() {
                 {/* 数据指标 */}
                 <div className="mx-auto grid max-w-4xl grid-cols-3 gap-8 rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-sm sm:gap-12 lg:p-12">
                   <div className="text-center">
-                    <div className="text-5xl font-bold text-white sm:text-6xl dark:text-zinc-900">2,000+</div>
+                    <div className="text-5xl font-bold text-white sm:text-6xl dark:text-zinc-900">500+</div>
                     <div className="mt-3 text-sm font-medium text-zinc-400 sm:text-base dark:text-zinc-600">开发者</div>
                   </div>
                   <div className="text-center">
@@ -285,10 +284,10 @@ export function HeroSection() {
               <div className="mx-auto mt-20 max-w-3xl text-center">
                 <div className="rounded-3xl border-2 border-zinc-700 bg-gradient-to-br from-zinc-900 to-zinc-800 p-12 shadow-2xl dark:border-zinc-200 dark:from-white dark:to-zinc-50 sm:p-16 lg:p-20">
                   <h2 className="mb-4 text-center text-3xl font-bold text-white sm:text-4xl dark:text-zinc-950">
-                    免费开始，无需信用卡
+                    免费开始，即时开通
                   </h2>
                   <p className="mb-10 text-center text-lg text-zinc-400 dark:text-zinc-600">
-                    获取 API Key，立即在 Claude Code 中使用
+                    获取 API Key，立即在智能体框架中使用
                   </p>
                   <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                     <Button
@@ -300,7 +299,7 @@ export function HeroSection() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="h-14 border-zinc-600 px-10 text-lg font-medium text-white hover:bg-zinc-800 transition-colors dark:border-zinc-300 dark:text-zinc-900 dark:hover:bg-zinc-100"
+                      className="h-14 border-zinc-600 px-10 text-lg font-medium text-zinc-300 hover:bg-zinc-800 transition-colors dark:border-zinc-300 dark:text-zinc-900 dark:hover:bg-zinc-100"
                     >
                       查看文档
                     </Button>
@@ -328,7 +327,7 @@ export function HeroSection() {
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <span className="font-medium">无需信用卡</span>
+                      <span className="font-medium">随时升级</span>
                     </div>
                   </div>
                 </div>

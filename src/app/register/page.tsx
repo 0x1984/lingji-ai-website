@@ -282,7 +282,7 @@ export default function RegisterPage() {
                     <div className="space-y-2 text-center text-sm text-zinc-600 dark:text-zinc-400">
                       <div className="flex items-center justify-center gap-2">
                         <Check className="h-4 w-4 text-green-600" />
-                        <span>无需信用卡</span>
+                        <span>无需付费</span>
                       </div>
                       <div className="flex items-center justify-center gap-2">
                         <Check className="h-4 w-4 text-green-600" />

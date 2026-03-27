@@ -74,7 +74,7 @@ const faqs = [
   {
     question: "免费版真的永久免费吗？",
     answer:
-      "是的，免费版永久免费，每天10次查询额度，适合个人试用和轻度使用。无需信用卡即可开始使用。",
+      "是的，免费版永久免费，每天10次查询额度，适合个人试用和轻度使用。无需付费即可开始使用。",
   },
   {
     question: "专业版的首月优惠是什么？",
@@ -128,7 +128,7 @@ export default function PricingPage() {
                 </span>
               </h1>
               <p className="text-xl text-zinc-300 dark:text-zinc-600">
-                免费开始，按需升级。无需信用卡，随时取消。
+                免费开始，按需升级。无需付费，随时取消。
               </p>
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function PricingPage() {
                 还没有决定？
               </h2>
               <p className="mb-8 text-xl text-zinc-400 dark:text-zinc-600">
-                免费版无需信用卡，立即开始使用
+                免费版无需付费，立即开始使用
               </p>
               <Link href="/register">
                 <Button size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 px-8 text-lg font-semibold text-white shadow-lg shadow-blue-600/30 hover:from-blue-700 hover:to-cyan-700 hover:shadow-xl">
