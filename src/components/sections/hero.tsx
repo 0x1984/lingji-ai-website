@@ -57,39 +57,30 @@ export function HeroSection() {
 
           {/* 案例1: 中小企业老板 */}
           <TabsContent value="sme" className="mt-6">
-            <Card className="border-2 border-zinc-200 shadow-lg dark:border-zinc-800">
+            <Card className="border shadow-card dark:border-zinc-800">
               <CardHeader>
                 <div className="mb-3">
-                  <CardTitle className="text-xl">1天评估10个供应商，发现2家风险</CardTitle>
+                  <CardTitle className="text-xl font-semibold">1天评估10个供应商，发现2家风险</CardTitle>
                   <CardDescription className="mt-2">张老板 | 电商公司 | 100+员工</CardDescription>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="rounded-lg bg-gradient-to-r from-blue-50 to-cyan-50 p-5 dark:from-blue-950 dark:to-cyan-950">
-                  <p className="text-base font-medium text-zinc-800 dark:text-zinc-200">
+              <CardContent className="space-y-5">
+                <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-5 dark:border-zinc-800 dark:bg-zinc-900">
+                  <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
                     "以前要2天，现在1天就查完了，还发现了2家有风险记录。"
                   </p>
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">使用的命令:</p>
-                  <code className="block rounded-lg bg-zinc-900 px-4 py-3 text-sm font-mono text-cyan-400 dark:bg-zinc-950">
+                  <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300">使用的命令:</p>
+                  <code className="block rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-mono text-zinc-900 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
                     ❯ /risk-summary "供应商A"
                   </code>
                 </div>
 
-                <div className="rounded-lg border-2 border-green-300 bg-gradient-to-r from-green-50 to-emerald-50 p-5 dark:border-green-700 dark:from-green-950 dark:to-emerald-950">
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-green-600">
-                      <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-lg font-bold text-green-900 dark:text-green-100">
-                      关键发现
-                    </p>
-                  </div>
-                  <div className="mt-3 space-y-2 text-sm font-medium text-green-800 dark:text-green-200">
+                <div className="rounded-lg border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
+                  <p className="mb-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">关键发现</p>
+                  <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
                     <div className="flex items-start gap-2">
                       <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-red-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
@@ -105,7 +96,7 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400">
+                <Button variant="outline" className="w-full border-zinc-300 text-zinc-900 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-100 dark:hover:bg-zinc-800">
                   了解更多 →
                 </Button>
               </CardContent>
@@ -114,47 +105,38 @@ export function HeroSection() {
 
           {/* 案例2: 律所律师 */}
           <TabsContent value="lawyer" className="mt-6">
-            <Card className="border-2 border-zinc-200 shadow-lg dark:border-zinc-800">
+            <Card className="border shadow-card dark:border-zinc-800">
               <CardHeader>
                 <div className="mb-3">
-                  <CardTitle className="text-xl">5层股权穿透，发现隐形股东</CardTitle>
+                  <CardTitle className="text-xl font-semibold">5层股权穿透，发现隐形股东</CardTitle>
                   <CardDescription className="mt-2">李律师 | XX律所合伙人 | 10年+经验</CardDescription>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 p-5 dark:from-purple-950 dark:to-pink-950">
-                  <p className="text-base font-medium text-zinc-800 dark:text-zinc-200">
+              <CardContent className="space-y-5">
+                <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-5 dark:border-zinc-800 dark:bg-zinc-900">
+                  <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
                     "用企查查查到第3层就断了。用灵吉AI查到第5层，发现了隐形股东。"
                   </p>
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">使用的命令:</p>
-                  <code className="block rounded-lg bg-zinc-900 px-4 py-3 text-sm font-mono text-purple-400 dark:bg-zinc-950">
+                  <p className="text-sm font-medium text-zinc-700 dark:text-zinc-300">使用的命令:</p>
+                  <code className="block rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-mono text-zinc-900 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
                     ❯ /ownership-chain "目标公司" --depth 5
                   </code>
                 </div>
 
-                <div className="rounded-lg border-2 border-purple-300 bg-gradient-to-r from-purple-50 to-pink-50 p-5 dark:border-purple-700 dark:from-purple-950 dark:to-pink-950">
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-purple-600">
-                      <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    </div>
-                    <p className="text-lg font-bold text-purple-900 dark:text-purple-100">
-                      关键发现
-                    </p>
-                  </div>
-                  <div className="mt-3 space-y-2 text-sm font-medium text-purple-800 dark:text-purple-200">
+                <div className="rounded-lg border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
+                  <p className="mb-3 text-sm font-semibold text-zinc-900 dark:text-zinc-100">关键发现</p>
+                  <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
                     <div className="flex items-start gap-2">
-                      <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-zinc-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>穿透5层，发现D公司为实际控制人(持股26%)</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-zinc-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       <span>揭示家族控制关系，存在关联交易风险</span>
@@ -162,7 +144,7 @@ export function HeroSection() {
                   </div>
                 </div>
 
-                <Button variant="outline" className="w-full border-purple-600 text-purple-600 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400">
+                <Button variant="outline" className="w-full border-zinc-300 text-zinc-900 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-100 dark:hover:bg-zinc-800">
                   了解更多 →
                 </Button>
               </CardContent>
