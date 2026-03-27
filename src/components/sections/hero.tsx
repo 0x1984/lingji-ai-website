@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export function HeroSection() {
-  const [activeTab, setActiveTab] = useState("sme");
+  const [, setActiveTab] = useState("sme");
 
   return (
     <section className="relative overflow-hidden bg-zinc-950 dark:bg-white">
@@ -171,13 +171,13 @@ export function HeroSection() {
 
                         <div className="mb-8 space-y-5">
                           <p className="text-lg leading-relaxed text-zinc-100 dark:text-zinc-700">
-                            "以前要2天，现在1天就查完了10个供应商，还发现了2家有风险记录。"
+                            &ldquo;以前要2天，现在1天就查完了10个供应商，还发现了2家有风险记录。&rdquo;
                           </p>
 
                           <div className="rounded-xl border border-zinc-700 bg-zinc-800/80 p-6 dark:border-zinc-200 dark:bg-zinc-50">
                             <p className="mb-3 text-sm font-semibold text-zinc-200 dark:text-zinc-700">使用的命令</p>
                             <code className="block rounded-lg border border-zinc-600 bg-zinc-950 px-4 py-3 text-sm font-mono text-cyan-400 dark:border-zinc-300 dark:bg-white dark:text-blue-600">
-                              ❯ /risk-summary "供应商A"
+                              ❯ /risk-summary &quot;供应商A&quot;
                             </code>
                           </div>
 
@@ -240,13 +240,13 @@ export function HeroSection() {
 
                         <div className="mb-8 space-y-5">
                           <p className="text-lg leading-relaxed text-zinc-100 dark:text-zinc-700">
-                            "用企查查查到第3层就断了。用灵吉AI查到第5层，发现了隐形股东。"
+                            &ldquo;用企查查查到第3层就断了。用灵吉AI查到第5层，发现了隐形股东。&rdquo;
                           </p>
 
                           <div className="rounded-xl border border-zinc-700 bg-zinc-800/80 p-6 dark:border-zinc-200 dark:bg-zinc-50">
                             <p className="mb-3 text-sm font-semibold text-zinc-200 dark:text-zinc-700">使用的命令</p>
                             <code className="block rounded-lg border border-zinc-600 bg-zinc-950 px-4 py-3 text-sm font-mono text-purple-400 dark:border-zinc-300 dark:bg-white dark:text-purple-600">
-                              ❯ /ownership-chain "目标公司" --depth 5
+                              ❯ /ownership-chain &quot;目标公司&quot; --depth 5
                             </code>
                           </div>
 
@@ -309,13 +309,13 @@ export function HeroSection() {
 
                         <div className="mb-8 space-y-5">
                           <p className="text-lg leading-relaxed text-zinc-100 dark:text-zinc-700">
-                            "尽调发现拟投项目和竞品公司有关联，这直接影响投资决策。"
+                            &ldquo;尽调发现拟投项目和竞品公司有关联，这直接影响投资决策。&rdquo;
                           </p>
 
                           <div className="rounded-xl border border-zinc-700 bg-zinc-800/80 p-6 dark:border-zinc-200 dark:bg-zinc-50">
                             <p className="mb-3 text-sm font-semibold text-zinc-200 dark:text-zinc-700">使用的命令</p>
                             <code className="block rounded-lg border border-zinc-600 bg-zinc-950 px-4 py-3 text-sm font-mono text-orange-400 dark:border-zinc-300 dark:bg-white dark:text-orange-600">
-                              ❯ /due-diligence "拟投公司" --full
+                              ❯ /due-diligence &quot;拟投公司&quot; --full
                             </code>
                           </div>
 
