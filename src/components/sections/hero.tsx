@@ -109,45 +109,39 @@ export function HeroSection() {
               </div>
 
               <Tabs defaultValue="sme" className="w-full" onValueChange={(value) => setActiveTab(value)}>
-                <TabsList className="mb-16 grid w-full grid-cols-3 gap-4 border border-zinc-700 bg-zinc-800/50 p-2 backdrop-blur-sm dark:border-zinc-200 dark:bg-zinc-100/80">
+                <TabsList className="mb-8 grid w-full grid-cols-3 gap-3 border-2 border-zinc-700 bg-zinc-900/80 p-1 backdrop-blur-sm dark:border-zinc-300 dark:bg-white">
                   <TabsTrigger
                     value="sme"
-                    className="data-[state=active]:bg-blue-600 data-[state=active]:text-white dark:data-[state=active]:bg-blue-600"
+                    className="data-[state=active]:bg-blue-600 data-[state=active]:text-white dark:data-[state=active]:bg-blue-600 group flex flex-col items-center gap-2 py-4 transition-all"
                   >
-                    <div className="flex items-center gap-2">
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                      <span className="text-sm font-medium">企业主</span>
-                    </div>
+                    <svg className="h-7 w-7 text-zinc-400 transition-colors group-hover:text-zinc-300 group-data-[state=active]:text-white dark:text-zinc-600 dark:group-hover:text-zinc-500 dark:group-data-[state=active]:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    <span className="text-base font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200 group-data-[state=active]:text-white dark:text-zinc-700 dark:group-hover:text-zinc-600 dark:group-data-[state=active]:text-white">企业主</span>
                   </TabsTrigger>
                   <TabsTrigger
                     value="lawyer"
-                    className="data-[state=active]:bg-purple-600 data-[state=active]:text-white dark:data-[state=active]:bg-purple-600"
+                    className="data-[state=active]:bg-purple-600 data-[state=active]:text-white dark:data-[state=active]:bg-purple-600 group flex flex-col items-center gap-2 py-4 transition-all"
                   >
-                    <div className="flex items-center gap-2">
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                      </svg>
-                      <span className="text-sm font-medium">律师</span>
-                    </div>
+                    <svg className="h-7 w-7 text-zinc-400 transition-colors group-hover:text-zinc-300 group-data-[state=active]:text-white dark:text-zinc-600 dark:group-hover:text-zinc-500 dark:group-data-[state=active]:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                    </svg>
+                    <span className="text-base font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200 group-data-[state=active]:text-white dark:text-zinc-700 dark:group-hover:text-zinc-600 dark:group-data-[state=active]:text-white">律师</span>
                   </TabsTrigger>
                   <TabsTrigger
                     value="vc"
-                    className="data-[state=active]:bg-orange-600 data-[state=active]:text-white dark:data-[state=active]:bg-orange-600"
+                    className="data-[state=active]:bg-orange-600 data-[state=active]:text-white dark:data-[state=active]:bg-orange-600 group flex flex-col items-center gap-2 py-4 transition-all"
                   >
-                    <div className="flex items-center gap-2">
-                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
-                      <span className="text-sm font-medium">投资人</span>
-                    </div>
+                    <svg className="h-7 w-7 text-zinc-400 transition-colors group-hover:text-zinc-300 group-data-[state=active]:text-white dark:text-zinc-600 dark:group-hover:text-zinc-500 dark:group-data-[state=active]:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                    <span className="text-base font-semibold text-zinc-400 transition-colors group-hover:text-zinc-200 group-data-[state=active]:text-white dark:text-zinc-700 dark:group-hover:text-zinc-600 dark:group-data-[state=active]:text-white">投资人</span>
                   </TabsTrigger>
                 </TabsList>
 
                 {/* 案例1: 中小企业老板 */}
                 <TabsContent value="sme" className="mt-0">
-                  <Card className="border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm dark:border-zinc-200 dark:bg-white">
+                  <Card className="border-2 border-blue-600 bg-zinc-900/50 backdrop-blur-sm shadow-2xl shadow-blue-600/10 dark:border-blue-600 dark:bg-white dark:shadow-xl">
                     <CardContent className="p-0">
                       {/* 图片区域 */}
                       <div className="relative h-72 overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-600 sm:h-80">
@@ -187,17 +181,17 @@ export function HeroSection() {
                             </code>
                           </div>
 
-                          <div className="rounded-xl border border-red-500/50 bg-red-950/80 p-6 dark:border-red-200 dark:bg-red-50">
-                            <p className="mb-4 text-sm font-semibold text-red-200 dark:text-red-700">关键发现</p>
-                            <div className="space-y-3 text-base text-red-100 dark:text-red-800">
+                          <div className="rounded-xl border-2 border-blue-500/50 bg-blue-950/80 p-6 dark:border-blue-300 dark:bg-blue-50">
+                            <p className="mb-4 text-sm font-semibold text-blue-200 dark:text-blue-700">关键发现</p>
+                            <div className="space-y-3 text-base text-blue-100 dark:text-blue-900">
                               <div className="flex items-start gap-3">
-                                <svg className="mt-1 h-5 w-5 flex-shrink-0 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                <svg className="mt-1 h-5 w-5 flex-shrink-0 text-blue-400 dark:text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                                 </svg>
                                 <span>供应商A: 3起法律纠纷，涉案金额50万元</span>
                               </div>
                               <div className="flex items-start gap-3">
-                                <svg className="mt-1 h-5 w-5 flex-shrink-0 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                <svg className="mt-1 h-5 w-5 flex-shrink-0 text-blue-400 dark:text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                                   <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                                 </svg>
                                 <span>供应商C: 经营异常，列入异常名录</span>
@@ -206,7 +200,7 @@ export function HeroSection() {
                           </div>
                         </div>
 
-                        <Button className="w-full bg-white text-zinc-900 hover:bg-zinc-100 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800">
+                        <Button className="w-full bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/30 dark:bg-blue-600">
                           了解更多 →
                         </Button>
                       </div>
@@ -216,7 +210,7 @@ export function HeroSection() {
 
                 {/* 案例2: 律所律师 */}
                 <TabsContent value="lawyer" className="mt-0">
-                  <Card className="border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm dark:border-zinc-200 dark:bg-white">
+                  <Card className="border-2 border-purple-600 bg-zinc-900/50 backdrop-blur-sm shadow-2xl shadow-purple-600/10 dark:border-purple-600 dark:bg-white dark:shadow-xl">
                     <CardContent className="p-0">
                       {/* 图片区域 */}
                       <div className="relative h-72 overflow-hidden bg-gradient-to-br from-purple-600 to-pink-600 sm:h-80">
@@ -256,7 +250,7 @@ export function HeroSection() {
                             </code>
                           </div>
 
-                          <div className="rounded-xl border border-purple-500/50 bg-purple-950/80 p-6 dark:border-purple-200 dark:bg-purple-50">
+                          <div className="rounded-xl border-2 border-purple-500/50 bg-purple-950/80 p-6 dark:border-purple-300 dark:bg-purple-50">
                             <p className="mb-4 text-sm font-semibold text-purple-200 dark:text-purple-700">关键发现</p>
                             <div className="space-y-3 text-base text-purple-100 dark:text-purple-800">
                               <div className="flex items-start gap-3">
@@ -275,7 +269,7 @@ export function HeroSection() {
                           </div>
                         </div>
 
-                        <Button className="w-full bg-white text-zinc-900 hover:bg-zinc-100 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800">
+                        <Button className="w-full bg-purple-600 text-white hover:bg-purple-700 shadow-lg shadow-purple-600/30 dark:bg-purple-600">
                           了解更多 →
                         </Button>
                       </div>
@@ -285,7 +279,7 @@ export function HeroSection() {
 
                 {/* 案例3: VC投资经理 */}
                 <TabsContent value="vc" className="mt-0">
-                  <Card className="border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm dark:border-zinc-200 dark:bg-white">
+                  <Card className="border-2 border-orange-600 bg-zinc-900/50 backdrop-blur-sm shadow-2xl shadow-orange-600/10 dark:border-orange-600 dark:bg-white dark:shadow-xl">
                     <CardContent className="p-0">
                       {/* 图片区域 */}
                       <div className="relative h-72 overflow-hidden bg-gradient-to-br from-orange-600 to-red-600 sm:h-80">
@@ -350,7 +344,7 @@ export function HeroSection() {
                           </div>
                         </div>
 
-                        <Button className="w-full bg-white text-zinc-900 hover:bg-zinc-100 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800">
+                        <Button className="w-full bg-orange-600 text-white hover:bg-orange-700 shadow-lg shadow-orange-600/30 dark:bg-orange-600">
                           了解更多 →
                         </Button>
                       </div>
