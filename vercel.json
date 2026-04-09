@@ -1,0 +1,23 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["hkg1"],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://lingji-ai-backend.vercel.app",
+    "NEXT_PUBLIC_APP_NAME": "灵吉AI - 内测版",
+    "NEXT_PUBLIC_BETA_MODE": "true"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_API_URL": "https://lingji-ai-backend.vercel.app"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://lingji-ai-backend.vercel.app/api/:path*"
+    }
+  ]
+}
